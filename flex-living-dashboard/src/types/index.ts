@@ -1,5 +1,5 @@
 export interface RawReviewCategory {
-  category: 'cleanliness' | 'communication' | 'value' | 'respect_house_rules';
+  category: 'cleanliness' | 'communication' | 'value';
   rating: number;
 }
 
@@ -13,10 +13,18 @@ export interface RawReview {
   submittedAt: string;
   guestName: string;
   listingName: string;
- 
+  channel: string; 
 }
 
-export interface NormalizedReview extends Omit<RawReview, 'submittedAt' | 'reviewCategory'> {
+export interface NormalizedReview {
+  id: number;
+  type: string;
+  status: string;
+  rating: number;
+  publicReview: string;
+  guestName: string;
+  listingName: string;
+  channel: string; 
   date: Date;
   categoryRatings: {
     cleanliness: number;
