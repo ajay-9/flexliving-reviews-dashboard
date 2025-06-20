@@ -25,7 +25,7 @@ export interface NormalizedReview {
   guestName: string;
   listingName: string;
   channel: string; 
-  date: Date;
+  date: Date | string; // Allow both Date objects and strings
   categoryRatings: {
     cleanliness: number;
     communication: number;

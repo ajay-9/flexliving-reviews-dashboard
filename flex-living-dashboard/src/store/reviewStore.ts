@@ -60,7 +60,14 @@ export const useReviewStore = create<ReviewState>((set, get) => ({
       if (!response.ok) throw new Error('Failed to fetch reviews');
       
       const json = await response.json();
-      const properties = json.data.properties as PropertyStats[];
+      // Convert date strings back to Date objects
+      const properties = json.data.properties.map((property: PropertyStats) => ({
+        ...property,
+        reviews: property.reviews.map(review => ({
+          ...review,
+          date: new Date(review.date) // Convert string back to Date
+        }))
+      }));
       
       set({ 
         properties, 

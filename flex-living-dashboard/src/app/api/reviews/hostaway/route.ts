@@ -5,6 +5,14 @@ import { RawReview, NormalizedReview, PropertyStats } from '@/types';
 function normalizeReview(review: RawReview): NormalizedReview | null {
   if (review.type !== 'guest-to-host') return null;
 
+    const reviewDate = new Date(review.submittedAt);
+
+      // Validate the date conversion worked
+  if (isNaN(reviewDate.getTime())) {
+    console.error('Invalid date format:', review.submittedAt);
+    return null; // Skip invalid dates
+  }
+
   const categoryRatings = review.reviewCategory.reduce((acc, cat) => {
     acc[cat.category] = cat.rating;
     return acc;
@@ -12,7 +20,7 @@ function normalizeReview(review: RawReview): NormalizedReview | null {
 
   return {
     ...review,
-    date: new Date(review.submittedAt),
+     date: reviewDate,
     categoryRatings: {
       cleanliness: categoryRatings.cleanliness || 0,
       communication: categoryRatings.communication || 0,
