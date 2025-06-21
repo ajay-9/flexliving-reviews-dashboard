@@ -1,18 +1,37 @@
 import React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Button } from './ui/Button';
 
 export const Header: React.FC = () => {
+  const pathname = usePathname();
+  const isPropertyPage = pathname?.startsWith('/property/');
+
   return (
     <header className="bg-white border-b border-gray-200 px-6 py-4">
       <div className="flex items-center justify-between">
-        <div className="text-2xl font-bold text-gray-900">
+        <Link href="/" className="text-2xl font-bold text-gray-900">
           Flex Living
-        </div>
+        </Link>
+        
         <div className="text-xl font-semibold text-gray-800">
-          Reviews
+          {isPropertyPage ? 'Property Details' : 'Reviews Dashboard'}
         </div>
-        <button className="px-6 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors font-medium">
-          Logout
-        </button>
+        
+        <div className="flex items-center gap-4">
+          {/* ← NEW: Conditional navigation */}
+          {isPropertyPage ? (
+            <Link href="/">
+              <Button variant="outline">
+                Manage Reviews
+              </Button>
+            </Link>
+          ) : (
+            <Button variant="outline">
+              Logout
+            </Button>
+          )}
+        </div>
       </div>
     </header>
   );

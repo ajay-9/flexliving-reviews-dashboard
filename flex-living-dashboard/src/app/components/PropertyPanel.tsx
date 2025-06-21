@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { PropertyStats } from '@/types';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { StarRating } from './StarRating';
 import { ReviewCard } from './ReviewCard';
 import { Card } from './ui/Card';
+import { Button } from './ui/Button';
 
 interface PropertyPanelProps {
   property: PropertyStats;
@@ -22,7 +24,10 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className="flex justify-between items-start">
-          <h3 className="text-xl font-bold text-gray-900">{property.name}</h3>
+          <div className="flex-1">
+            <h3 className="text-xl font-bold text-gray-900">{property.name}</h3>
+            <p className="text-sm text-gray-600 mt-1">{property.details.location.area}, {property.details.location.city}</p>
+          </div>
           <div className="flex items-center gap-3 text-sm text-gray-600">
             Pending reviews
             <span className="bg-gray-100 px-2.5 py-1 rounded-full text-xs font-semibold">
@@ -32,21 +37,32 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
           </div>
         </div>
 
-        <div className="flex items-center gap-4 mt-3 text-sm">
-          <div className="flex items-center gap-2">
-            <span className="font-medium">Avg Rating: {property.averageRating}</span>
-            <StarRating rating={property.averageRating} />
+        <div className="flex items-center justify-between mt-3">
+          <div className="flex items-center gap-4 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="font-medium">Avg Rating: {property.averageRating}</span>
+              <StarRating rating={property.averageRating} />
+            </div>
+            <span className="text-gray-400">•</span>
+            <span className="text-gray-600">Pending: {property.pendingReviews}</span>
           </div>
-          <span className="text-gray-400">•</span>
-          <span className="text-gray-600">Pending: {property.pendingReviews}</span>
+          
+          {/* ← NEW: View Property Button */}
+          <Link href={`/property/${property.slug}`} onClick={(e) => e.stopPropagation()}>
+            <Button variant="outline" size="sm" className="flex items-center gap-2">
+              <ExternalLink size={14} />
+              View Property Page
+            </Button>
+          </Link>
         </div>
       </div>
 
-      {/* Expanded Content */}
+      {/* Expanded Content - KEEP existing implementation */}
       {isExpanded && (
         <div className="border-t border-gray-200">
-          {/* Stats Section */}
+          {/* Stats Section - KEEP existing grid implementation */}
           <div className="p-6 grid grid-cols-3 gap-8">
+            {/* KEEP existing Total Reviews, Category Averages, Approved Reviews sections */}
             {/* Total Reviews */}
             <div>
               <h4 className="font-semibold text-gray-700 mb-3">Total Reviews</h4>
@@ -104,7 +120,7 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
             </div>
           </div>
 
-          {/* Reviews Grid */}
+          {/* Reviews Grid - KEEP existing implementation */}
           <div className="bg-gray-50 p-6">
             {pendingReviews.length > 0 ? (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">

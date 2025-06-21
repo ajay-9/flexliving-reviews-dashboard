@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import mockData from './mock.json';
 import { RawReview, NormalizedReview, PropertyStats } from '@/types';
+import { generatePropertyDetails } from '@/utils/propertyData';
+import { slugify } from '@/utils/slugify';
 
 function normalizeReview(review: RawReview): NormalizedReview | null {
   if (review.type !== 'guest-to-host') return null;
@@ -28,7 +30,6 @@ function normalizeReview(review: RawReview): NormalizedReview | null {
     },
   };
 }
-
 function processProperties(reviews: NormalizedReview[]): PropertyStats[] {
   const propertiesMap = new Map<string, NormalizedReview[]>();
 
@@ -68,9 +69,17 @@ function processProperties(reviews: NormalizedReview[]): PropertyStats[] {
     const mostCommonComplaint = Object.entries(complaints)
       .sort((a, b) => b[1] - a[1])[0];
 
+    const propertyDetails = generatePropertyDetails(name);
+
     propertyStats.push({
       name,
-      reviews: propertyReviews.sort((a, b) => b.date.getTime() - a.date.getTime()),
+      slug: slugify(name),                    // ← NEW
+      details: propertyDetails,               // ← NEW
+      reviews: propertyReviews.sort(
+        (a, b) =>
+          (typeof b.date === 'string' ? new Date(b.date).getTime() : b.date.getTime()) -
+          (typeof a.date === 'string' ? new Date(a.date).getTime() : a.date.getTime())
+      ),
       totalReviews,
       averageRating: Number(averageRating.toFixed(1)),
       pendingReviews: totalReviews,

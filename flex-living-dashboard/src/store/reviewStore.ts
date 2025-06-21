@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import { PropertyStats, FilterState, NormalizedReview } from '@/types';
 
+
 interface ReviewState {
   properties: PropertyStats[];
   filteredProperties: PropertyStats[];
@@ -22,7 +23,8 @@ const filterProperties = (properties: PropertyStats[], filters: FilterState): Pr
         if (filters.channel && review.channel !== filters.channel) return false;
         
         if (filters.time) {
-          const daysDiff = (now.getTime() - review.date.getTime()) / (1000 * 3600 * 24);
+          const reviewDate = typeof review.date === 'string' ? new Date(review.date) : review.date;
+          const daysDiff = (now.getTime() - reviewDate.getTime()) / (1000 * 3600 * 24);
           if (filters.time === '7d' && daysDiff > 7) return false;
           if (filters.time === '30d' && daysDiff > 30) return false;
           if (filters.time === '90d' && daysDiff > 90) return false;
@@ -60,10 +62,11 @@ export const useReviewStore = create<ReviewState>((set, get) => ({
       if (!response.ok) throw new Error('Failed to fetch reviews');
       
       const json = await response.json();
-      // Convert date strings back to Date objects
+      
+      // ← UPDATED: Convert date strings back to Date objects
       const properties = json.data.properties.map((property: PropertyStats) => ({
         ...property,
-        reviews: property.reviews.map(review => ({
+        reviews: property.reviews.map((review: any) => ({
           ...review,
           date: new Date(review.date) // Convert string back to Date
         }))

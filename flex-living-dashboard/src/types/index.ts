@@ -58,3 +58,60 @@ export interface FilterState {
   category: string;
   time: string;
 }
+
+
+export interface PropertyDetails {
+  slug: string;
+  name: string;
+  description: string;
+  location: {
+    area: string;
+    city: string;
+    postcode: string;
+    coordinates: {
+      lat: number;
+      lng: number;
+    };
+  };
+  pricing: {
+    basePrice: number;
+    currency: string;
+    cleaningFee: number;
+  };
+  capacity: {
+    maxGuests: number;
+    bedrooms: number;
+    bathrooms: number;
+  };
+  amenities: string[];
+  images: string[];
+  checkInOut: {
+    checkIn: string;
+    checkOut: string;
+  };
+  policies: {
+    smoking: boolean;
+    pets: boolean;
+    parties: boolean;
+  };
+}
+
+export interface PropertyStats {
+  name: string;
+  slug: string;                    // ← NEW
+  details: PropertyDetails;        // ← NEW
+  reviews: NormalizedReview[];
+  averageRating: number;
+  totalReviews: number;
+  pendingReviews: number;
+  approvedReviews: number;
+  ratingDistribution: Record<number, number>;
+  categoryAverages: {
+    cleanliness: number;
+    communication: number;
+    value: number;
+  };
+  mostCommonComplaint: string;
+}
+
+
