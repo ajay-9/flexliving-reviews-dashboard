@@ -1,12 +1,14 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { PropertyStats } from '@/types';
+import { PropertyStats } from '@/types/dashboard';
 import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
-import { StarRating } from './StarRating';
+import { StarRating } from '../shared/StarRating';
 import { ReviewCard } from './ReviewCard';
-import { Card } from './ui/Card';
-import { Button } from './ui/Button';
+import { Card } from '../shared/ui/Card';
+import { Button } from '../shared/ui/Button';
+import { getPropertyAssets } from '@/config/propertyAssets';
+import { slugify } from '@/utils/slugify'; // ← ADD THIS IMPORT
 
 interface PropertyPanelProps {
   property: PropertyStats;
@@ -15,6 +17,10 @@ interface PropertyPanelProps {
 export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const pendingReviews = property.reviews.filter(r => !r.approved && !r.rejected);
+  
+  // ✅ GENERATE MISSING DATA DYNAMICALLY
+  const propertySlug = slugify(property.name);
+  const propertyAssets = getPropertyAssets(property.name);
 
   return (
     <Card className="mb-4">
@@ -26,7 +32,10 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
         <div className="flex justify-between items-start">
           <div className="flex-1">
             <h3 className="text-xl font-bold text-gray-900">{property.name}</h3>
-            <p className="text-sm text-gray-600 mt-1">{property.details.location.area}, {property.details.location.city}</p>
+            {/* ✅ USE DYNAMIC ASSETS INSTEAD OF property.details */}
+            <p className="text-sm text-gray-600 mt-1">
+              {propertyAssets.location.area}, {propertyAssets.location.city}
+            </p>
           </div>
           <div className="flex items-center gap-3 text-sm text-gray-600">
             Pending reviews
@@ -47,8 +56,8 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
             <span className="text-gray-600">Pending: {property.pendingReviews}</span>
           </div>
           
-          {/* ← NEW: View Property Button */}
-          <Link href={`/property/${property.slug}`} onClick={(e) => e.stopPropagation()}>
+          {/* ✅ USE DYNAMIC SLUG INSTEAD OF property.slug */}
+          <Link href={`/property/${propertySlug}`} onClick={(e) => e.stopPropagation()}>
             <Button variant="outline" size="sm" className="flex items-center gap-2">
               <ExternalLink size={14} />
               View Property Page
@@ -57,18 +66,15 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
         </div>
       </div>
 
-      {/* Expanded Content - KEEP existing implementation */}
+      {/* Rest of component stays exactly the same */}
       {isExpanded && (
         <div className="border-t border-gray-200">
-          {/* Stats Section - KEEP existing grid implementation */}
           <div className="p-6 grid grid-cols-3 gap-8">
-            {/* KEEP existing Total Reviews, Category Averages, Approved Reviews sections */}
             {/* Total Reviews */}
             <div>
               <h4 className="font-semibold text-gray-700 mb-3">Total Reviews</h4>
               <div className="text-3xl font-bold mb-2">{property.totalReviews}</div>
               
-              {/* Rating Distribution */}
               <div className="space-y-1">
                 {[5, 4, 3, 2, 1].map(star => (
                   <div key={star} className="flex items-center gap-2">
@@ -87,22 +93,16 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
               <div className="text-sm text-gray-500 mt-2">Overall: {property.averageRating}</div>
             </div>
 
-            {/* Category Averages */}
+            {/* Category Averages - UPDATED TO HANDLE DYNAMIC CATEGORIES */}
             <div>
               <h4 className="font-semibold text-gray-700 mb-3">Category Averages</h4>
               <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-sm">Cleanliness</span>
-                  <span className="font-medium">{property.categoryAverages.cleanliness}/10</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm">Value</span>
-                  <span className="font-medium">{property.categoryAverages.value}/10</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-sm">Communication</span>
-                  <span className="font-medium">{property.categoryAverages.communication}/10</span>
-                </div>
+                {Object.entries(property.categoryAverages).slice(0, 3).map(([category, rating]) => (
+                  <div key={category} className="flex justify-between">
+                    <span className="text-sm capitalize">{category}</span>
+                    <span className="font-medium">{rating}/10</span>
+                  </div>
+                ))}
                 <div className="flex justify-between mt-4 pt-2 border-t">
                   <span className="text-sm text-red-600">Common Issue</span>
                   <span className="font-medium text-red-600">{property.mostCommonComplaint}</span>
@@ -120,7 +120,6 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
             </div>
           </div>
 
-          {/* Reviews Grid - KEEP existing implementation */}
           <div className="bg-gray-50 p-6">
             {pendingReviews.length > 0 ? (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Button } from './ui/Button';
+import { Button } from '../shared/ui/Button';
 
 export const Header: React.FC = () => {
   const pathname = usePathname();

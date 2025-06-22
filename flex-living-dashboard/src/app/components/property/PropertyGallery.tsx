@@ -11,20 +11,16 @@ export const PropertyGallery: React.FC<PropertyGalleryProps> = ({ images, proper
 
   return (
     <div className="grid grid-cols-4 gap-2 h-96">
-      {/* Main Image */}
       <div className="col-span-3 relative rounded-lg overflow-hidden">
-        <Image
-          src={images[currentImage] || '/images/placeholder-property.jpg'}
+        <img
+          src={images[currentImage] || images[0]}
           alt={propertyName}
-          fill
-          className="object-cover"
-          priority
+          className="w-full h-full object-cover"
         />
       </div>
       
-      {/* Thumbnail Grid */}
       <div className="grid grid-rows-4 gap-2">
-        {[...Array(4)].map((_, index) => (
+        {images.slice(0, 4).map((image, index) => (
           <div 
             key={index}
             className={`relative rounded-lg overflow-hidden cursor-pointer border-2 transition-colors ${
@@ -32,11 +28,10 @@ export const PropertyGallery: React.FC<PropertyGalleryProps> = ({ images, proper
             }`}
             onClick={() => setCurrentImage(index)}
           >
-            <Image
-              src={images[index] || '/images/placeholder-property.jpg'}
+            <img
+              src={image}
               alt={`${propertyName} ${index + 1}`}
-              fill
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         ))}

@@ -1,11 +1,11 @@
 import React from 'react';
 import { MapPin, Share, Heart } from 'lucide-react';
-import { PropertyDetails } from '@/types';
-import { StarRating } from './StarRating';
-import { Button } from './ui/Button';
+import { PropertyDisplayData } from '@/types';  // ← CHANGED
+import { StarRating } from '../shared/StarRating';
+import { Button } from '../shared/ui/Button';
 
 interface PropertyHeaderProps {
-  property: PropertyDetails;
+  property: PropertyDisplayData;  // ← CHANGED to PropertyDisplayData
   averageRating: number;
   totalReviews: number;
 }
@@ -19,7 +19,8 @@ export const PropertyHeader: React.FC<PropertyHeaderProps> = ({
     <div className="mb-6">
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">{property.name}</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">{property.name}</h1>  {/* ✅ Now works! */}
+          
           <div className="flex items-center gap-4 text-sm">
             <div className="flex items-center gap-2">
               <StarRating rating={averageRating} size={16} />
@@ -29,7 +30,7 @@ export const PropertyHeader: React.FC<PropertyHeaderProps> = ({
             <span className="text-gray-400">•</span>
             <div className="flex items-center gap-1 text-gray-600">
               <MapPin size={16} />
-              <span>{property.location.area}, {property.location.city}</span>
+              <span>{property.assets.location.area}, {property.assets.location.city}</span>
             </div>
           </div>
         </div>

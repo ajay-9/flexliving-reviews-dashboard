@@ -1,21 +1,27 @@
 "use client";
 import React, { useEffect } from 'react';
-import { Header } from './components/Header';
-import { FilterBar } from './components/FilterBar';
-import { PropertyPanel } from './components/PropertyPanel';
-import { Sidebar } from './components/Sidebar';
+import { Header } from './components/dashboard/Header';
+import { FilterBar } from './components/dashboard/FilterBar';
+import { PropertyPanel } from './components/dashboard/PropertyPanel';
+import { Sidebar } from './components/dashboard/Sidebar';
 import { useReviewStore } from '@/store/reviewStore';
-import { Loader } from './components/ui/Loader';
+import { Loader } from './components/shared/ui/Loader';
 
-export default function Dashboard() {
+/**
+ * Main dashboard page - Landing page as requested
+ * Shows property managers' review management interface
+ */
+export default function DashboardPage() {
   const { filteredProperties, loading, error, fetchReviews } = useReviewStore();
 
   useEffect(() => {
+    // console.log('Fetching reviews on component mount');
     fetchReviews();
   }, [fetchReviews]);
 
   return (
     <div className="min-h-screen bg-slate-50">
+      
       <Header />
       <FilterBar />
       

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from './ui/Card';
+import { Card } from '../shared/ui/Card';
 
 export const Sidebar: React.FC = () => {
   return (

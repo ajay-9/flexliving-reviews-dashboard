@@ -1,7 +1,7 @@
 import React from "react";
-import { NormalizedReview } from "@/types";
+import { NormalizedReview } from "@/types/api";
 import { useReviewStore } from "@/store/reviewStore";
-import { StarRating } from "./StarRating";
+import { StarRating } from "../shared/StarRating";
 
 interface ReviewCardProps {
   review: NormalizedReview;
