@@ -116,7 +116,7 @@ export default function PropertyPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-flex-cream">
       {/* Header */}
       <PropertyHeader title={property.name} />
 
@@ -131,25 +131,11 @@ export default function PropertyPage() {
             <h1 className="text-3xl font-bold text-gray-900 mb-3">
               {property.name}
             </h1>
-            <div className="flex items-center gap-4 text-sm">
-              <div className="flex items-center gap-2">
-                <div className="flex text-yellow-400">⭐⭐⭐⭐⭐</div>
-                <span className="font-semibold">{property.averageRating}</span>
-                <span className="text-gray-600">
-                  ({property.totalApprovedReviews} reviews)
-                </span>
-              </div>
-              <span>•</span>
-              <span className="text-gray-600">
-                📍 {property.assets.location.area},{" "}
-                {property.assets.location.city}
-              </span>
-            </div>
           </div>
 
           {/* Gallery - Uses generic images */}
           <PropertyGallery
-            images={property.assets.images} // ✅ Generic images
+            images={property.assets.images}
             propertyName={property.name}
           />
 
@@ -184,9 +170,6 @@ export default function PropertyPage() {
                 </div>
               </div>
             </div>
-            <div className="w-14 h-14 bg-gray-600 text-white rounded-full flex items-center justify-center font-bold text-lg ml-6">
-              FL
-            </div>
           </div>
 
           {/* Content Grid */}
@@ -200,13 +183,13 @@ export default function PropertyPage() {
                 </h3>
                 <div className="text-gray-700 leading-relaxed">
                   <p className="mb-3">{property.assets.description}</p>
-                  <button className="text-blue-600 hover:text-blue-800 font-medium">
+                  <button className="text-black-600 hover:text-blue-800 font-medium">
                     Read more
                   </button>
                 </div>
               </div>
 
-              {/* ✅ Amenities Section - Uses your PropertyAmenities component with generic data */}
+              {/* Amenities Section */}
               <PropertyAmenities amenities={property.assets.amenities} />
 
               {/* Stay Policies Section */}
