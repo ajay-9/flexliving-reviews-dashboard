@@ -42,9 +42,9 @@ export const DEFAULT_PROPERTY_ASSETS: PropertyAssets = {
   },
   amenities: STANDARD_AMENITIES,
   location: {
-    area: 'London Area',    // Generic for all
-    city: 'London',         // Generic for all
-    postcode: 'London'      // Generic for all
+    area: 'Area',    // Generic for all
+    city: 'City',         // Generic for all
+    postcode: 'Postcode'      // Generic for all
   },
   description: 'Comfortable accommodation with modern amenities and excellent connectivity. Perfect for travelers looking for a quality stay in London.'
 };

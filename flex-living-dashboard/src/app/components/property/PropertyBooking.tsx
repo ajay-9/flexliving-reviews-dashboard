@@ -1,6 +1,5 @@
 import React from 'react';
 import { PropertyDisplayData } from '@/types';
-import { StarRating } from '../shared/StarRating';
 
 interface PropertyBookingProps {
   property: PropertyDisplayData;
@@ -14,58 +13,95 @@ export const PropertyBooking: React.FC<PropertyBookingProps> = ({
   totalReviews 
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6 sticky top-6">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2">
-          <span className="text-2xl font-bold">£120</span>
-          <span className="text-gray-600">night</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <StarRating rating={averageRating} size={16} />
-          <span className="text-sm font-medium">{averageRating}</span>
-          <span className="text-sm text-gray-600">({totalReviews} reviews)</span>
-        </div>
-      </div>
-
-      <div className="space-y-4 mb-4">
-        <div className="grid grid-cols-2 gap-2">
-          <div className="border border-gray-300 rounded-lg p-3">
-            <label className="block text-xs font-medium text-gray-700 mb-1">CHECK-IN</label>
-            <div className="text-sm text-gray-600">Mar 15, 2025</div>
-          </div>
-          <div className="border border-gray-300 rounded-lg p-3">
-            <label className="block text-xs font-medium text-gray-700 mb-1">CHECK-OUT</label>
-            <div className="text-sm text-gray-600">Mar 18, 2025</div>
+    <div className="lg:col-span-1">
+      <div className="sticky top-24 overflow-hidden bg-white border-0 shadow-lg rounded-2xl">
+        
+        {/* Header with exact color from dev tools */}
+        <div className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-[#284E4C]"></div>
+          <div className="relative p-6">
+            <h3 className="text-lg font-semibold text-[#FFFFFF] mb-1">
+              <span>Book your stay</span>
+            </h3>
+            <p className="text-sm text-[#D2DADA]">
+              <span>Select dates to see the total price</span>
+            </p>
           </div>
         </div>
 
-        <div className="border border-gray-300 rounded-lg p-3">
-          <label className="block text-xs font-medium text-gray-700 mb-1">GUESTS</label>
-          <div className="text-sm text-gray-600">2 guests</div>
-        </div>
-      </div>
+        {/* Form section */}
+        <div className="p-6 pt-4">
+          
+          {/* Date and guests selection - Exact structure from dev tools */}
+          <div className="space-y-1">
+            <div className="flex gap-2">
+              {/* Select dates section */}
+              <div className="flex-1">
+                <div className="grid w-full h-full">
+                  <button className="inline-flex items-center whitespace-nowrap text-sm focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 border-input px-4 py-2 w-full h-[42px] justify-start text-left font-normal bg-[#F1F3EE] border-0 shadow-sm hover:bg-[#FFFDF6] transition-colors rounded-l-md rounded-r-none group">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-4 w-4">
+                      <path d="M8 2v4"></path>
+                      <path d="M16 2v4"></path>
+                      <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                      <path d="M3 10h18"></path>
+                    </svg>
+                    <span>Select dates</span>
+                  </button>
+                </div>
+              </div>
+              
+              {/* Guests section */}
+              <div className="w-[120px]">
+                <button className="flex w-full items-center justify-between rounded-md border-input px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 disabled:cursor-not-allowed disabled:opacity-50 h-[42px] bg-[#F1F3EE] border-0 shadow-sm hover:bg-[#FFFDF6] transition-colors text-[#333333] rounded-l-none rounded-r-md">
+                  <div className="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-muted-foreground">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <span style={{ pointerEvents: 'none' }}>1</span>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 opacity-50">
+                    <path d="m6 9 6 6 6-6"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
 
-      <button className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-4">
-        Reserve
-      </button>
+          {/* Buttons section */}
+          <div className="space-y-3 pt-6">
+            {/* Check availability button */}
+            <button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 h-12 rounded-md px-8 w-full bg-[#284E4C] hover:bg-[#284E4C]/90 text-white shadow-lg hover:shadow-xl transition-all duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-4 w-4">
+                <path d="M8 2v4"></path>
+                <path d="M16 2v4"></path>
+                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                <path d="M3 10h18"></path>
+                <path d="m9 16 2 2 4-4"></path>
+              </svg>
+              <span>Check availability</span>
+            </button>
 
-      <div className="text-center text-sm text-gray-600 mb-4">
-        You won't be charged yet
-      </div>
+            {/* Send inquiry button */}
+            <button className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 border bg-background shadow-sm h-12 rounded-md px-8 w-full border-[#284E4C]/20 text-[#284E4C] hover:bg-[#284E4C]/5 hover:border-[#284E4C]/30">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-4 w-4">
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+              </svg>
+              <span>Send Inquiry</span>
+            </button>
+          </div>
 
-      {/* Hardcoded pricing summary */}
-      <div className="space-y-2 border-t pt-4">
-        <div className="flex justify-between text-sm">
-          <span>£120 x 3 nights</span>
-          <span>£360</span>
-        </div>
-        <div className="flex justify-between text-sm">
-          <span>Cleaning fee</span>
-          <span>£25</span>
-        </div>
-        <div className="flex justify-between font-semibold text-base border-t pt-2">
-          <span>Total</span>
-          <span>£385</span>
+          {/* Instant confirmation */}
+          <p className="text-sm text-[#5C5C5A] text-center mt-4">
+            <span className="inline-flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3">
+                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+              </svg>
+              <span>Instant confirmation</span>
+            </span>
+          </p>
         </div>
       </div>
     </div>
