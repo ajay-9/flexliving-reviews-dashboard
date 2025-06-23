@@ -32,7 +32,7 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
         <div className="flex justify-between items-start">
           <div className="flex-1">
             <h3 className="text-xl font-bold text-gray-900">{property.name}</h3>
-            {/* ✅ USE DYNAMIC ASSETS INSTEAD OF property.details */}
+           
             <p className="text-sm text-gray-600 mt-1">
               {propertyAssets.location.area}, {propertyAssets.location.city}
             </p>
@@ -52,8 +52,6 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
               <span className="font-medium">Avg Rating: {property.averageRating}</span>
               <StarRating rating={property.averageRating} />
             </div>
-            <span className="text-gray-400">•</span>
-            <span className="text-gray-600">Pending: {property.pendingReviews}</span>
           </div>
           
           {/* ✅ USE DYNAMIC SLUG INSTEAD OF property.slug */}
