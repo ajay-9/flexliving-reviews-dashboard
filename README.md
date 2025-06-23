@@ -61,7 +61,8 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 ## Architecture
 
 ### Component Structure
-src/
+```
+ src/
 ├── app/
 │ ├── api/ # Server-side API routes
 │ │ ├── places/search/ # Google Places search
@@ -75,6 +76,7 @@ src/
 ├── types/ # TypeScript interfaces
 ├── utils/ # Helper functions and business logic
 └── config/ # Application configuration
+```
 
 ### Key Design Decisions
 
