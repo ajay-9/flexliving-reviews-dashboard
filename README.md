@@ -1,6 +1,3 @@
-it into a comprehensive README.md file:
-
-text
 # FlexLiving Reviews Dashboard
 
 A modern property management dashboard that enables managers to moderate guest reviews and display approved reviews on public property pages.
@@ -11,12 +8,12 @@ The FlexLiving Reviews Dashboard is a comprehensive solution for property manage
 
 ## Features
 
-- 🏢 **Property Management Dashboard** - Intuitive interface for review moderation
-- ⭐ **Review Approval System** - Approve/reject reviews for public display
-- 📊 **Analytics & Insights** - Property performance metrics and trends
-- 🔍 **Advanced Filtering** - Filter by rating, category, channel, and time
-- 🌐 **Google Reviews Integration** - Real-time Google Places API integration
-- 📱 **Responsive Design** - Modern UI consistent with Flex Living branding
+-**Property Management Dashboard** - Intuitive interface for review moderation
+-**Review Approval System** - Approve/reject reviews for public display
+-**Analytics & Insights** - Property performance metrics and trends
+-**Advanced Filtering** - Filter by rating, category, channel, and time
+-**Google Reviews Integration** - Real-time Google Places API integration
+-**Responsive Design** - Modern UI consistent with Flex Living branding
 
 ## Tech Stack
 
@@ -42,12 +39,10 @@ The FlexLiving Reviews Dashboard is a comprehensive solution for property manage
 git clone <repository-url>
 cd flexliving-reviews-dashboard
 
-text
 
 2. **Install dependencies**
 npm install
 
-text
 
 3. **Set up environment variables**
 Create a `.env.local` file in the root directory:
@@ -55,12 +50,10 @@ GOOGLE_PLACES_API_KEY=your_google_places_api_key
 HOSTAWAY_API_KEY=your_hostaway_api_key
 HOSTAWAY_ACCOUNT_ID=61148
 
-text
 
 4. **Run the development server**
 npm run dev
 
-text
 
 5. **Open your browser**
 Navigate to [http://localhost:3000](http://localhost:3000)
@@ -83,21 +76,12 @@ src/
 ├── utils/ # Helper functions and business logic
 └── config/ # Application configuration
 
-text
-
 ### Key Design Decisions
 
 #### 1. State Management Strategy
 **Decision**: Zustand with localStorage persistence for review approval decisions
 // Store approval decisions persistently
 approvalDecisions: Record<number, 'approved' | 'rejected'>
-
-text
-
-**Rationale**: 
-- Lightweight alternative to Redux for simple state needs
-- Persistence ensures approval decisions survive browser sessions
-- Performance benefits for real-time dashboard updates
 
 #### 2. Review Processing Logic
 **Decision**: Separation between raw API data and business logic processing
@@ -109,14 +93,6 @@ text
 4. Calculate property statistics from approved reviews only
 5. Display results in dashboard and public pages
 
-#### 3. Rating Scale Conversion
-**Decision**: Convert 10-point Hostaway scale to 5-star display system
-const averageRating = (hostawayRating / 2) // 8/10 becomes 4/5 stars
-
-text
-
-**Rationale**: 5-star rating is more familiar to end users and matches industry standards.
-
 ## API Endpoints
 
 ### Hostaway Reviews API
@@ -124,8 +100,8 @@ text
 - **Method**: GET
 - **Description**: Fetches and normalizes review data from Hostaway API with mock fallback
 - **Features**:
-  - 5-minute caching to reduce API calls
-  - Rate limiting (3-second delays between requests)
+  - caching to reduce API calls
+  - Rate limiting 
   - Graceful fallback to mock data for assessment demonstration
 
 ### Google Places Search API
@@ -134,8 +110,7 @@ text
 - **Parameters**: `q` (search query)
 - **Description**: Finds Google Place ID for properties
 - **Features**:
-  - 24-hour caching for stable location data
-  - Intelligent query optimization for known properties
+  - caching for stable location data
   - Rate limiting to prevent quota exhaustion
 
 ### Google Reviews API
@@ -144,9 +119,11 @@ text
 - **Parameters**: `placeId` (Google Place ID)
 - **Description**: Fetches reviews from Google Places API
 - **Features**:
-  - 12-hour caching for review content stability
+  - caching for review content stability
   - Limited to 5 most recent reviews for performance
   - Cost-conscious API management
+
+  -  - NOTE !!! - I have implemented GOOGLE REVIEWS ONLY FOR ONE PLACE. JUST TO SHOW IMPLEMENTATION AND TO SAVE API CALL COST.
 
 ## Google Reviews Integration
 
@@ -166,24 +143,6 @@ text
 - **Solution Applied**: Removed all API key restrictions for server-side compatibility
 - **Production Recommendation**: Use IP-based restrictions instead of HTTP referrer restrictions
 
-### Caching Strategy
-- **Places Search**: 24-hour cache (location data rarely changes)
-- **Reviews**: 12-hour cache (balances freshness with API cost management)
-- **Fallback Behavior**: Serve cached data on API failures for reliability
-
-## Usage
-
-### Manager Dashboard
-1. **View Properties**: See all properties with review statistics
-2. **Filter Reviews**: Use filters to find specific reviews or properties
-3. **Moderate Reviews**: Approve or reject reviews for public display
-4. **Monitor Performance**: Track property ratings and trends
-
-### Public Property Pages
-1. **Browse Properties**: Navigate to property pages via slugified URLs
-2. **View Approved Reviews**: See only manager-approved reviews
-3. **Google Reviews**: Additional reviews from Google Places (for GuestReady properties)
-
 ## Development
 
 ### Key Files
@@ -202,25 +161,6 @@ curl "http://localhost:3000/api/places/search?q=GuestReady%20London"
 
 Test Google Reviews
 curl "http://localhost:3000/api/reviews/google?placeId=PLACE_ID"
-
-text
-
-## Assessment Compliance
-
-This implementation fulfills all FlexLiving assessment requirements:
-
-- ✅ **Hostaway Integration**: Real API attempt with mock fallback
-- ✅ **Manager Dashboard**: Modern, intuitive interface with filtering and moderation
-- ✅ **Review Display Page**: Replicates Flex Living website layout
-- ✅ **Google Reviews Integration**: Real API implementation with proper cost management
-- ✅ **Documentation**: Comprehensive technical documentation
-
-### Code Quality Features
-- Type-safe TypeScript implementation
-- Modular component architecture
-- Professional error handling and caching
-- Production-ready state management
-- Scalable business logic separation
 
 ## License
 
