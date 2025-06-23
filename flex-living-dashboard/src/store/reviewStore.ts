@@ -13,7 +13,7 @@ interface ReviewState {
   loading: boolean;
   error: string | null;
   filters: FilterState;
-  // ✅ Store approval decisions separately
+  // Store approval decisions separately
   approvalDecisions: Record<number, 'approved' | 'rejected'>;
   fetchReviews: () => Promise<void>;
   updateFilters: (newFilters: Partial<FilterState>) => void;
@@ -24,7 +24,7 @@ interface ReviewState {
   ) => void;
 }
 
-// ✅ Apply stored approval decisions to reviews
+// Apply stored approval decisions to reviews
 const applyApprovalDecisions = (
   reviews: NormalizedReview[],
   approvalDecisions: Record<number, 'approved' | 'rejected'>
@@ -176,7 +176,7 @@ const filterProperties = (
 };
 
 
-// ✅ FIXED: Proper Zustand store with persistence
+// Proper Zustand store with persistence
 export const useReviewStore = create<ReviewState>()(
   persist(
     (set, get) => ({

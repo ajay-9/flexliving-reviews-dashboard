@@ -14,9 +14,9 @@ interface ChannelChartProps {
 export const ChannelChart: React.FC<ChannelChartProps> = ({ data }) => {
   const maxReviews = Math.max(...data.map(item => item.reviews));
   const chartHeight = 140;
-  const chartWidth = 340; // ✅ Increased width
-  const barWidth = 60;    // ✅ Wider bars for better visibility
-  const barSpacing = 30;  // ✅ More spacing between bars
+  const chartWidth = 340; 
+  const barWidth = 60;    
+  const barSpacing = 30;  
 
   return (
     <div className="bg-white p-4 rounded-lg border shadow-sm mb-4">

@@ -2,6 +2,27 @@ import { NextResponse } from 'next/server';
 import mockData from './mock.json';
 import { HostawayApiResponse, HostawayReview, NormalizedReview } from '@/types/api';
 
+// ✅ RATE LIMITING CONFIGURATION
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes like Google Reviews
+const RATE_LIMIT_DELAY = 3000; // 3 seconds between requests
+
+// In-memory cache for Hostaway reviews
+let cachedHostawayData: any = null;
+let lastHostawayFetch = 0;
+let isRateLimited = false;
+
+// ✅ RATE LIMITING FUNCTION
+const enforceRateLimit = async () => {
+  if (isRateLimited) {
+    throw new Error('Rate limit active. Please wait before making another request.');
+  }
+  
+  isRateLimited = true;
+  setTimeout(() => {
+    isRateLimited = false;
+  }, RATE_LIMIT_DELAY);
+};
+
 /**
  * Pure normalization of Hostaway API response
  * Processes both real API and mock data consistently
@@ -43,10 +64,13 @@ function normalizeHostawayReview(review: HostawayReview): NormalizedReview | nul
 }
 
 /**
- * Fetch reviews from real Hostaway API
+ * Fetch reviews from real Hostaway API with rate limiting
  */
 async function fetchHostawayReviews(): Promise<HostawayApiResponse | null> {
   try {
+    // ✅ ENFORCE RATE LIMITING
+    await enforceRateLimit();
+    
     const response = await fetch('https://api.hostfully.com/v1/reviews', {
       method: 'GET',
       headers: {
@@ -69,19 +93,35 @@ async function fetchHostawayReviews(): Promise<HostawayApiResponse | null> {
 }
 
 /**
- * API Route Handler - Attempts real API first, falls back to mock
+ * API Route Handler - Rate limited with caching
  * This route will be tested as per assessment requirements
  */
 export async function GET() {
   try {
-    // ✅ 1. ATTEMPT REAL HOSTAWAY API FIRST
+    const now = Date.now();
+    
+    // ✅ CHECK 5-MINUTE CACHE FIRST
+    if (cachedHostawayData && 
+        (now - lastHostawayFetch) < CACHE_DURATION) {
+      
+      console.log('Returning cached Hostaway data');
+      return NextResponse.json({
+        status: 'success',
+        dataSource: 'cached',
+        data: cachedHostawayData.data,
+        cacheAge: Math.floor((now - lastHostawayFetch) / 1000 / 60), // minutes
+        message: '5-minute cache active - preserving resources'
+      });
+    }
+
+    // ✅ ATTEMPT REAL HOSTAWAY API WITH RATE LIMITING
     console.log('Attempting Hostaway API call...');
     const realApiResponse = await fetchHostawayReviews();
     
     let apiResponse: HostawayApiResponse;
     let dataSource = 'mock'; // Default assumption
     
-    // ✅ 2. USE REAL DATA IF AVAILABLE AND VALID
+    // ✅ USE REAL DATA IF AVAILABLE AND VALID
     if (realApiResponse && 
         realApiResponse.status === 'success' && 
         realApiResponse.result && 
@@ -92,36 +132,62 @@ export async function GET() {
       console.log(`Using live Hostaway data: ${realApiResponse.result.length} reviews`);
       
     } else {
-      // ✅ 3. FALLBACK TO MOCK DATA
+      // ✅ FALLBACK TO MOCK DATA
       apiResponse = mockData as HostawayApiResponse;
       console.log('Using mock data fallback');
     }
 
-    // ✅ 4. VALIDATE API RESPONSE STRUCTURE
+    // ✅ VALIDATE API RESPONSE STRUCTURE
     if (apiResponse.status !== 'success') {
       throw new Error('API response unsuccessful');
     }
 
-    // ✅ 5. NORMALIZE ALL DATA CONSISTENTLY
+    // ✅ NORMALIZE ALL DATA CONSISTENTLY
     const normalizedReviews = apiResponse.result
       .map(normalizeHostawayReview)
       .filter(Boolean) as NormalizedReview[];
 
-    // ✅ 6. RETURN STRUCTURED RESPONSE
+    // ✅ PREPARE CACHED RESPONSE DATA
+    const responseData = {
+      reviews: normalizedReviews,
+      total: normalizedReviews.length,
+      timestamp: new Date().toISOString(),
+      rateLimiting: {
+        cacheMinutes: 5,
+        nextRefresh: new Date(now + CACHE_DURATION).toISOString()
+      }
+    };
+
+    // ✅ CACHE THE RESPONSE
+    cachedHostawayData = {
+      data: responseData
+    };
+    lastHostawayFetch = now;
+
+    console.log(`Hostaway data cached for 5 minutes: ${normalizedReviews.length} reviews`);
+
+    // ✅ RETURN STRUCTURED RESPONSE
     return NextResponse.json({
       status: 'success',
       dataSource, // Helps with debugging
-      data: {
-        reviews: normalizedReviews,
-        total: normalizedReviews.length,
-        timestamp: new Date().toISOString()
-      }
+      data: responseData
     });
 
   } catch (error) {
     console.error('API Route Error:', error);
     
-    // ✅ 7. FINAL FALLBACK WITH MOCK DATA
+    // ✅ RETURN CACHED DATA IF AVAILABLE ON ERROR
+    if (cachedHostawayData) {
+      console.log('API error - serving cached Hostaway data');
+      return NextResponse.json({
+        status: 'success',
+        dataSource: 'cached-fallback',
+        data: cachedHostawayData.data,
+        warning: 'API error - serving cached data'
+      });
+    }
+    
+    // ✅ FINAL FALLBACK WITH MOCK DATA
     try {
       const fallbackResponse = mockData as HostawayApiResponse;
       const normalizedReviews = fallbackResponse.result

@@ -2,6 +2,96 @@
   "status": "success",
   "result": [
     {
+      "id": 8001,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Outstanding GuestReady service! Professional check-in, immaculate apartment, and excellent location. The team was responsive throughout our stay.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 9 },
+        { "category": "respect_house_rules", "rating": 9 }
+      ],
+      "submittedAt": "2025-06-20 14:30:00",
+      "guestName": "Alexandra Thompson",
+      "listingName": "GuestReady London"
+    },
+    {
+      "id": 8002,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great experience with GuestReady London. Clean apartment, good location, and helpful staff. Minor delay during check-in but resolved quickly.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 9 },
+        { "category": "respect_house_rules", "rating": 8 }
+      ],
+      "submittedAt": "2025-06-18 11:15:00",
+      "guestName": "Michael Chen",
+      "listingName": "GuestReady London"
+    },
+    {
+      "id": 8003,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 10,
+      "publicReview": "Perfect stay with GuestReady London! Exceeded expectations with spotless accommodation and seamless service. Highly professional team.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2025-06-15 16:45:00",
+      "guestName": "Emma Johnson",
+      "listingName": "GuestReady London"
+    },
+    {
+      "id": 8004,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Decent service from GuestReady but felt overpriced for what we got. Clean property but quite small. Location is convenient for transport.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 7 },
+        { "category": "respect_house_rules", "rating": 5 }
+      ],
+      "submittedAt": "2025-06-12 09:20:00",
+      "guestName": "David Rodriguez",
+      "listingName": "GuestReady London"
+    },
+    {
+      "id": 8005,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Excellent experience with GuestReady London! Clean, well-equipped apartment and smooth self-check-in process. Would definitely book again.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 8 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2025-06-08 19:30:00",
+      "guestName": "Sarah Williams",
+      "listingName": "GuestReady London"
+    },
+    {
+      "id": 8006,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good overall stay with GuestReady London. Property was clean and well-located. Check-in instructions could be clearer.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "respect_house_rules", "rating": 8 }
+      ],
+      "submittedAt": "2025-05-30 13:45:00",
+      "guestName": "James Taylor",
+      "listingName": "GuestReady London"
+    },
+    {
       "id": 9001,
       "type": "guest-to-host",
       "status": "published",
@@ -10,23 +100,22 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "value", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 }
       ],
       "submittedAt": "2025-06-18 10:00:00",
       "guestName": "Sarah Lee",
       "listingName": "The Shoreditch Loft"
-      
     },
     {
       "id": 9002,
       "type": "guest-to-host",
-      "status": "published",
+      "status": "published", 
       "rating": 4,
       "publicReview": "Great location but the apartment was filthy. Found old food in the fridge and the bathroom was not cleaned properly. Not acceptable.",
       "reviewCategory": [
         { "category": "cleanliness", "rating": 2 },
         { "category": "communication", "rating": 7 },
-        { "category": "value", "rating": 6 }
+        { "category": "respect_house_rules", "rating": 6 }
       ],
       "submittedAt": "2025-06-15 14:30:00",
       "guestName": "Mark Chen",
@@ -41,12 +130,11 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 7 },
         { "category": "communication", "rating": 6 },
-        { "category": "value", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 }
       ],
       "submittedAt": "2025-06-12 11:00:00",
       "guestName": "Emily Carter",
       "listingName": "Kensington Studio"
-      
     },
     {
       "id": 9004,
@@ -57,12 +145,11 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 9 },
         { "category": "communication", "rating": 3 },
-        { "category": "value", "rating": 8 }
+        { "category": "respect_house_rules", "rating": 8 }
       ],
       "submittedAt": "2025-06-10 19:45:00",
       "guestName": "David Rodriguez",
       "listingName": "Soho Theatre Apartment"
-      
     },
     {
       "id": 9005,
@@ -73,12 +160,11 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 9 },
-        { "category": "value", "rating": 9 }
+        { "category": "respect_house_rules", "rating": 9 }
       ],
       "submittedAt": "2025-05-28 16:20:00",
       "guestName": "Olivia White",
       "listingName": "The Shoreditch Loft"
-     
     },
     {
       "id": 9006,
@@ -89,12 +175,11 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 1 },
         { "category": "communication", "rating": 6 },
-        { "category": "value", "rating": 5 }
+        { "category": "respect_house_rules", "rating": 5 }
       ],
       "submittedAt": "2025-05-25 21:00:00",
       "guestName": "Ben Green",
       "listingName": "Camden Market Flat"
-      
     },
     {
       "id": 9007,
@@ -105,12 +190,11 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 8 },
         { "category": "communication", "rating": 5 },
-        { "category": "value", "rating": 7 }
+        { "category": "respect_house_rules", "rating": 7 }
       ],
       "submittedAt": "2025-05-20 12:15:00",
       "guestName": "Chloe Taylor",
       "listingName": "Soho Theatre Apartment"
-      
     },
     {
       "id": 9008,
@@ -121,12 +205,11 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 9 },
         { "category": "communication", "rating": 8 },
-        { "category": "value", "rating": 10 }
+        { "category": "respect_house_rules", "rating": 10 }
       ],
       "submittedAt": "2025-05-15 09:00:00",
       "guestName": "James Harris",
       "listingName": "Kensington Studio"
-      
     },
     {
       "id": 9009,
@@ -137,27 +220,11 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 8 },
         { "category": "communication", "rating": 8 },
-        { "category": "value", "rating": 4 }
+        { "category": "respect_house_rules", "rating": 4 }
       ],
       "submittedAt": "2025-04-28 18:00:00",
       "guestName": "Sophia Martin",
       "listingName": "The Shoreditch Loft"
-      
-    },
-    {
-      "id": 9010,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": 5,
-      "publicReview": "The location is great for Camden market but the flat has a persistent damp smell, especially in the bathroom. It needs some maintenance.",
-      "reviewCategory": [
-        { "category": "cleanliness", "rating": 4 },
-        { "category": "communication", "rating": 7 },
-        { "category": "value", "rating": 5 }
-      ],
-      "submittedAt": "2025-04-22 13:40:00",
-      "guestName": "Lucas King",
-      "listingName": "Camden Market Flat"
     }
   ]
 }
