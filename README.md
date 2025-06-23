@@ -46,9 +46,9 @@ npm install
 
 3. **Set up environment variables**
 Create a `.env.local` file in the root directory:
-GOOGLE_PLACES_API_KEY=your_google_places_api_key
-HOSTAWAY_API_KEY=your_hostaway_api_key
-HOSTAWAY_ACCOUNT_ID=61148
+- GOOGLE_PLACES_API_KEY=your_google_places_api_key
+- HOSTAWAY_API_KEY=your_hostaway_api_key
+- HOSTAWAY_ACCOUNT_ID=61148
 
 
 4. **Run the development server**
