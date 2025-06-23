@@ -20,7 +20,7 @@ export default function DashboardPage() {
   }, [fetchReviews]);
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-flex-cream">
       
       <Header />
       <FilterBar />

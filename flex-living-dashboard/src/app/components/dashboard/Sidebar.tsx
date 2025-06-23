@@ -1,86 +1,94 @@
 import React from 'react';
-import { Card } from '../shared/ui/Card';
+import { CategoryChart } from './CategoryChart';
+import { ChannelChart } from './ChannelChart';
+import { QuickInsights } from './QuickInsights';
 
 export const Sidebar: React.FC = () => {
+  // ✅ Category performance data
+  const categoryMonthlyData = {
+    cleanliness: [
+      { month: 'Mar', score: 6.2 },
+      { month: 'Apr', score: 7.5 },
+      { month: 'May', score: 7.0 },
+      { month: 'Jun', score: 8.9 }
+    ],
+    communication: [
+      { month: 'Mar', score: 6.0 },
+      { month: 'Apr', score: 7.1 },
+      { month: 'May', score: 9.2 },
+      { month: 'Jun', score: 6.4 }
+    ],
+    value: [
+      { month: 'Mar', score: 6.5 },
+      { month: 'Apr', score: 7.6 },
+      { month: 'May', score: 7.8 },
+      { month: 'Jun', score: 8.5 }
+    ]
+  };
+
+  const channelData = [
+    { channel: 'Airbnb', reviews: 55, rating: 4.5, color: 'bg-red-500' },
+    { channel: 'Booking.com', reviews: 42, rating: 4.2, color: 'bg-blue-600' },
+    { channel: 'Direct', reviews: 28, rating: 4.7, color: 'bg-green-600' }
+  ];
+
+  // ✅ Quick Insights Data
+  const quickInsightsData = [
+    {
+      icon: '📈',
+      text: 'Communication scores consistently high (9.2/10)',
+      type: 'positive' as const
+    },
+    {
+      icon: '⚠️',
+      text: 'Value ratings need attention (7.8/10)',
+      type: 'warning' as const
+    },
+    {
+      icon: 'ℹ️',
+      text: 'Direct bookings show highest satisfaction (4.7/5)',
+      type: 'info' as const
+    },
+    {
+      icon: '🎯',
+      text: 'June shows peak performance trend',
+      type: 'trend' as const
+    }
+  ];
+
   return (
-    <div className="space-y-6">
-      {/* Trends Card */}
-      <Card>
-        <div className="p-6">
-          <h3 className="text-lg font-semibold mb-4">Trends</h3>
-          
-          {/* Cleanliness Trend */}
-          <div className="mb-6">
-            <div className="text-sm font-medium mb-1">Avg. Cleanliness</div>
-            <div className="text-xs text-gray-500 mb-3">(4 months)</div>
-            <div className="h-12 bg-gray-100 rounded flex items-center justify-center">
-              <svg width="200" height="32" viewBox="0 0 200 32" className="text-blue-500">
-                <polyline
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  points="10,25 50,20 100,15 150,18 190,12"
-                />
-              </svg>
-            </div>
-          </div>
-
-          {/* Communication Trend */}
-          <div className="mb-6">
-            <div className="text-sm font-medium mb-3">Avg. Communication</div>
-            <div className="h-12 bg-gray-100 rounded flex items-center justify-center">
-              <svg width="200" height="32" viewBox="0 0 200 32" className="text-green-500">
-                <polyline
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  points="10,20 50,16 100,22 150,14 190,18"
-                />
-              </svg>
-            </div>
-          </div>
-
-          {/* Value Trend */}
-          <div>
-            <div className="text-sm font-medium mb-3">Avg. Value</div>
-            <div className="h-12 bg-gray-100 rounded flex items-center justify-center">
-              <svg width="200" height="32" viewBox="0 0 200 32" className="text-purple-500">
-                <polyline
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  points="10,18 50,24 100,16 150,20 190,14"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </Card>
-
-      {/* Complaints Card */}
-      <Card>
-        <div className="p-6">
-          <h3 className="text-lg font-semibold mb-4">
-            Complaints <span className="text-sm font-normal text-gray-500">(30 Days)</span>
-          </h3>
-          
-          <div className="space-y-3">
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-700">Cleanliness</span>
-              <span className="font-semibold">7</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-700">Value</span>
-              <span className="font-semibold">5</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-700">Communication</span>
-              <span className="font-semibold">2</span>
-            </div>
-          </div>
-        </div>
+    <div className="w-85 bg-gray-50 p-4 overflow-y-auto h-full">
+      <h2 className="text-lg font-bold mb-4 text-gray-800">Analytics Overview</h2>
+      
+      {/* Category Charts */}
+      <div className="space-y-4">
+        <CategoryChart 
+          categoryName="cleanliness" 
+          data={categoryMonthlyData.cleanliness} 
+          color="bg-green-500" 
+        />
         
-      </Card>
+        <CategoryChart 
+          categoryName="communication" 
+          data={categoryMonthlyData.communication} 
+          color="bg-blue-500" 
+        />
+        
+        <CategoryChart 
+          categoryName="value" 
+          data={categoryMonthlyData.value} 
+          color="bg-purple-500" 
+        />
+        
+        {/* Channel Performance */}
+        <ChannelChart data={channelData} />
+        
+        {/* Quick Insights */}
+        <QuickInsights 
+          categoryData={categoryMonthlyData} 
+          channelData={channelData} 
+        />
+      </div>
     </div>
   );
 };
