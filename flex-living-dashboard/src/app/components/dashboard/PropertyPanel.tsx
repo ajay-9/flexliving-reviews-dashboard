@@ -18,7 +18,7 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const pendingReviews = property.reviews.filter(r => !r.approved && !r.rejected);
   
-  // ✅ GENERATE MISSING DATA DYNAMICALLY
+  // GENERATE MISSING DATA DYNAMICALLY
   const propertySlug = slugify(property.name);
   const propertyAssets = getPropertyAssets(property.name);
 
@@ -54,7 +54,7 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
             </div>
           </div>
           
-          {/* ✅ USE DYNAMIC SLUG INSTEAD OF property.slug */}
+          {/* USE DYNAMIC SLUG INSTEAD OF property.slug */}
           <Link href={`/property/${propertySlug}`} onClick={(e) => e.stopPropagation()}>
             <Button variant="outline" size="sm" className="flex items-center gap-2">
               <ExternalLink size={14} />
