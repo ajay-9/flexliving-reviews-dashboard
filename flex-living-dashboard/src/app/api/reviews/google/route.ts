@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 // Caching and rate limiting configuration
-const CACHE_DURATION = 12 * 60 * 60 * 1000; // 12 hours in milliseconds
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 12 hours in milliseconds
 const MAX_REVIEWS = 5; // Limit to 5 reviews
 
 // In-memory cache for Google reviews
