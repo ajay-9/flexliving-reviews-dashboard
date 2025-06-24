@@ -10,7 +10,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 9 },
-        { "category": "respect_house_rules", "rating": 9 }
+        { "category": "value", "rating": 9 }
       ],
       "submittedAt": "2025-06-20 14:30:00",
       "guestName": "Alexandra Thompson",
@@ -25,7 +25,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 8 },
         { "category": "communication", "rating": 9 },
-        { "category": "respect_house_rules", "rating": 8 }
+        { "category": "value", "rating": 8 }
       ],
       "submittedAt": "2025-06-18 11:15:00",
       "guestName": "Michael Chen",
@@ -40,7 +40,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "value", "rating": 10 }
       ],
       "submittedAt": "2025-06-15 16:45:00",
       "guestName": "Emma Johnson",
@@ -55,7 +55,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 8 },
         { "category": "communication", "rating": 7 },
-        { "category": "respect_house_rules", "rating": 5 }
+        { "category": "value", "rating": 5 }
       ],
       "submittedAt": "2025-06-12 09:20:00",
       "guestName": "David Rodriguez",
@@ -70,7 +70,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 9 },
         { "category": "communication", "rating": 8 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "value", "rating": 10 }
       ],
       "submittedAt": "2025-06-08 19:30:00",
       "guestName": "Sarah Williams",
@@ -85,7 +85,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 8 },
         { "category": "communication", "rating": 6 },
-        { "category": "respect_house_rules", "rating": 8 }
+        { "category": "value", "rating": 8 }
       ],
       "submittedAt": "2025-05-30 13:45:00",
       "guestName": "James Taylor",
@@ -100,7 +100,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 10 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "value", "rating": 10 }
       ],
       "submittedAt": "2025-06-18 10:00:00",
       "guestName": "Sarah Lee",
@@ -115,7 +115,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 2 },
         { "category": "communication", "rating": 7 },
-        { "category": "respect_house_rules", "rating": 6 }
+        { "category": "value", "rating": 6 }
       ],
       "submittedAt": "2025-06-15 14:30:00",
       "guestName": "Mark Chen",
@@ -130,7 +130,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 7 },
         { "category": "communication", "rating": 6 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "value", "rating": 10 }
       ],
       "submittedAt": "2025-06-12 11:00:00",
       "guestName": "Emily Carter",
@@ -145,7 +145,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 9 },
         { "category": "communication", "rating": 3 },
-        { "category": "respect_house_rules", "rating": 8 }
+        { "category": "value", "rating": 8 }
       ],
       "submittedAt": "2025-06-10 19:45:00",
       "guestName": "David Rodriguez",
@@ -160,7 +160,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 10 },
         { "category": "communication", "rating": 9 },
-        { "category": "respect_house_rules", "rating": 9 }
+        { "category": "value", "rating": 9 }
       ],
       "submittedAt": "2025-05-28 16:20:00",
       "guestName": "Olivia White",
@@ -175,7 +175,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 1 },
         { "category": "communication", "rating": 6 },
-        { "category": "respect_house_rules", "rating": 5 }
+        { "category": "value", "rating": 5 }
       ],
       "submittedAt": "2025-05-25 21:00:00",
       "guestName": "Ben Green",
@@ -190,7 +190,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 8 },
         { "category": "communication", "rating": 5 },
-        { "category": "respect_house_rules", "rating": 7 }
+        { "category": "value", "rating": 7 }
       ],
       "submittedAt": "2025-05-20 12:15:00",
       "guestName": "Chloe Taylor",
@@ -205,7 +205,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 9 },
         { "category": "communication", "rating": 8 },
-        { "category": "respect_house_rules", "rating": 10 }
+        { "category": "value", "rating": 10 }
       ],
       "submittedAt": "2025-05-15 09:00:00",
       "guestName": "James Harris",
@@ -220,7 +220,7 @@
       "reviewCategory": [
         { "category": "cleanliness", "rating": 8 },
         { "category": "communication", "rating": 8 },
-        { "category": "respect_house_rules", "rating": 4 }
+        { "category": "value", "rating": 4 }
       ],
       "submittedAt": "2025-04-28 18:00:00",
       "guestName": "Sophia Martin",
