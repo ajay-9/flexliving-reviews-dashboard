@@ -1,10 +1,11 @@
-import { NormalizedReview } from './api';
+import { NormalizedReview } from "./api";
 
 export interface PropertyAnalysis {
   propertyName: string;
   summary: string;
-  issueLevel: 'critical' | 'emerging' | 'improvement' | 'good';
+  issueLevel: "critical" | "emerging" | "improvement" | "good";
   painPoints: string[];
+  improvementSuggestions: string[];
   confidence: number;
   analyzedAt: string;
   reviewCount: number;
@@ -27,8 +28,9 @@ export interface AnalysisRequest {
 
 export interface PerplexityResponse {
   summary: string;
-  issueLevel: 'critical' | 'emerging' | 'improvement' | 'good';
+  issueLevel: "critical" | "emerging" | "improvement" | "good";
   painPoints: string[];
+  improvementSuggestions: string[];
   confidence: number;
 }
 

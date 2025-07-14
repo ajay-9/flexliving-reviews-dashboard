@@ -63,6 +63,19 @@ export function validateAnalysisResponse(response: PerplexityResponse): Analysis
       warnings.push(`Low confidence score: ${response.confidence}`);
     }
   }
+if (!Array.isArray(response.improvementSuggestions)) {
+    errors.push('Improvement suggestions must be an array');
+  } else {
+    if (response.improvementSuggestions.length !== 3) {
+      warnings.push(`Expected 3 improvement suggestions, got ${response.improvementSuggestions.length}`);
+    }
+
+    response.improvementSuggestions.forEach((suggestion, index) => {
+      if (typeof suggestion !== 'string' || suggestion.trim().length === 0) {
+        errors.push(`Improvement suggestion ${index + 1} is invalid`);
+      }
+    });
+  }
 
   return {
     isValid: errors.length === 0,
@@ -80,18 +93,22 @@ export function sanitizeAnalysisResponse(response: PerplexityResponse): Perplexi
     painPoints: (response.painPoints || [])
       .filter(point => typeof point === 'string' && point.trim())
       .slice(0, 3),
+    improvementSuggestions: (response.improvementSuggestions || []) // NEW: Sanitize suggestions
+      .filter(suggestion => typeof suggestion === 'string' && suggestion.trim())
+      .slice(0, 3),
     confidence: Math.max(0, Math.min(1, response.confidence || 0))
   };
 }
-
 export function createFallbackAnalysis(propertyName: string, reviewCount: number): PerplexityResponse {
   return {
     summary: `Analysis unavailable for ${propertyName}. Based on ${reviewCount} reviews.`,
     issueLevel: 'emerging',
     painPoints: ['Analysis temporarily unavailable', 'Please try again later'],
+    improvementSuggestions: ['System maintenance', 'Manual review recommended', 'Try again later'], // ADD THIS LINE
     confidence: 0.1
   };
 }
+
 
 export function validateAndCleanResponse(rawContent: string): PerplexityResponse {
   try {

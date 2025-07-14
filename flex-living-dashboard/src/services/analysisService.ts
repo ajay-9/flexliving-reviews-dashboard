@@ -61,12 +61,13 @@ class AnalysisService {
       // Sanitize response
       const sanitized = sanitizeAnalysisResponse(aiResponse);
 
-      // Create analysis result
+      // Create analysis result with improvement suggestions
       const analysis: PropertyAnalysis = {
         propertyName,
         summary: sanitized.summary,
         issueLevel: sanitized.issueLevel,
         painPoints: sanitized.painPoints,
+        improvementSuggestions: sanitized.improvementSuggestions || [], // ADDED: Include improvement suggestions
         confidence: sanitized.confidence,
         analyzedAt: new Date().toISOString(),
         reviewCount: reviews.length,
@@ -177,6 +178,7 @@ class AnalysisService {
     return results;
   }
 
+  // ENHANCED: Rule-based fallback with improvement suggestions
   private createRuleBasedFallback(propertyName: string, reviews: NormalizedReview[]): PropertyAnalysis {
     console.log(`🔧 Creating rule-based fallback analysis for "${propertyName}"`);
     
@@ -210,11 +212,15 @@ class AnalysisService {
       `${cat.category} rated ${cat.average.toFixed(1)}/10 on average`
     );
 
+    // ADDED: Generate improvement suggestions based on category scores and issue level
+    const improvementSuggestions = this.generateImprovementSuggestions(categoryAverages, issueLevel);
+
     const analysis: PropertyAnalysis = {
       propertyName,
       summary: `Property has ${reviews.length} reviews with ${avgRating.toFixed(1)}/5 rating.\nRule-based analysis due to AI processing issues.`,
       issueLevel,
       painPoints: painPoints.length > 0 ? painPoints : ['No significant issues identified'],
+      improvementSuggestions, // ADDED: Include improvement suggestions
       confidence: 0.6,
       analyzedAt: new Date().toISOString(),
       reviewCount: reviews.length,
@@ -227,6 +233,48 @@ class AnalysisService {
     cacheService.set(propertyName, analysis);
 
     return analysis;
+  }
+
+  // ADDED: Helper method for generating improvement suggestions
+  private generateImprovementSuggestions(
+    categoryAverages: Array<{category: string; average: number}>, 
+    issueLevel: string
+  ): string[] {
+    const suggestions: string[] = [];
+    
+    // Find lowest scoring categories for targeted improvements
+    const lowestCategories = categoryAverages.slice(0, 2);
+    
+    lowestCategories.forEach(cat => {
+      if (cat.category.includes('clean')) {
+        suggestions.push(issueLevel === 'critical' ? 'Emergency deep cleaning' : 'Enhanced cleaning standards');
+      } else if (cat.category.includes('communication')) {
+        suggestions.push(issueLevel === 'critical' ? '24/7 support hotline' : 'Faster response times');
+      } else if (cat.category.includes('value')) {
+        suggestions.push(issueLevel === 'critical' ? 'Pricing review urgent' : 'Competitive pricing analysis');
+      } else if (cat.category.includes('respect')) {
+        suggestions.push('Guest guidelines training');
+      }
+    });
+    
+    // Add general suggestion based on issue level
+    if (issueLevel === 'critical') {
+      suggestions.push('Staff training program');
+    } else if (issueLevel === 'emerging') {
+      suggestions.push('Preventive maintenance');
+    } else if (issueLevel === 'improvement') {
+      suggestions.push('Premium amenities upgrade');
+    } else {
+      suggestions.push('Guest experience enhancement');
+    }
+    
+    // Ensure we always have exactly 3 suggestions
+    const finalSuggestions = suggestions.slice(0, 3);
+    while (finalSuggestions.length < 3) {
+      finalSuggestions.push('Property optimization review');
+    }
+    
+    return finalSuggestions;
   }
 
   getAnalysisStatus(propertyName: string): {

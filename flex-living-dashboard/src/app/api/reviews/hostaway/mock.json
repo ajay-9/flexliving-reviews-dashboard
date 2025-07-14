@@ -50,12 +50,12 @@
       "id": 9002,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 9,
-      "publicReview": "Another great stay at the Shoreditch Loft. Consistently clean and professional. The best place for a work trip in London.",
+      "rating": 6,
+      "publicReview": "I had some issues in checking-in, the key did not appear on time even if I had purchased the early check-in.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 9 },
-        { "category": "value", "rating": 9 }
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 2 },
+        { "category": "value", "rating": 7 }
       ],
       "submittedAt": "2025-05-28 16:20:00",
       "guestName": "Olivia White",
@@ -65,17 +65,50 @@
       "id": 9003,
       "type": "guest-to-host",
       "status": "published",
-      "rating": 6,
-      "publicReview": "Decent place, but the photos are a bit misleading. The apartment is much smaller than it looks. Communication was fine, but I feel it was overpriced.",
+      "rating": 1,
+      "publicReview": "We arrived at a dirty property, the floors were sticky, and the bathroom had not been cleaned. The host was unresponsive to our messages.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 8 },
-        { "category": "value", "rating": 4 }
+        { "category": "cleanliness", "rating": 0 },
+        { "category": "communication", "rating": 3 },
+        { "category": "value", "rating": 1 }
       ],
       "submittedAt": "2025-04-28 18:00:00",
       "guestName": "Sophia Martin",
       "listingName": "The Shoreditch Loft"
     },
+    {
+      "id": 9004,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Property is located in the center. We really enjoyed our stay, the host was very responsive and the apartment was clean and well-equipped.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-05-28 18:00:00",
+      "guestName": "Sonia Martin",
+      "listingName": "The Shoreditch Loft"
+    },
+
+    {
+      "id": 9005,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Mixed experience. The location is great but the apartment was not as clean as expected. Some areas were spotless, others not so much.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 3 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2025-06-28 18:00:00",
+      "guestName": "Max Martin",
+      "listingName": "The Shoreditch Loft"
+    },
+
+
     {
       "id": 10001,
       "type": "guest-to-host",

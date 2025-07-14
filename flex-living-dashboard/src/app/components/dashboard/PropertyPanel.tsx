@@ -10,6 +10,7 @@ import { Card } from '../shared/ui/Card';
 import { Button } from '../shared/ui/Button';
 import { getPropertyAssets } from '@/config/propertyAssets';
 import { slugify } from '@/utils/slugify';
+import { PropertyImprovementSuggestions } from './PropertyImprovementSuggestions';
 
 // NEW IMPORTS: Add these imports for analysis features
 import { PropertyAnalysisProvider } from './PropertyAnalysisProvider';
@@ -146,6 +147,7 @@ export const PropertyPanel: React.FC<PropertyPanelProps> = ({ property }) => {
 
                   {/* NEW: AI Pain Points */}
                   {analysis && <PropertyPainPoints analysis={analysis} />}
+                  {analysis && <PropertyImprovementSuggestions analysis={analysis} />}
                 </div>
 
                 {/* Approved Reviews - ENHANCED WITH AI */}
