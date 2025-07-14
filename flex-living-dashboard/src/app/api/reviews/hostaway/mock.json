@@ -32,66 +32,6 @@
       "listingName": "GuestReady London"
     },
     {
-      "id": 8003,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": 10,
-      "publicReview": "Perfect stay with GuestReady London! Exceeded expectations with spotless accommodation and seamless service. Highly professional team.",
-      "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 10 },
-        { "category": "value", "rating": 10 }
-      ],
-      "submittedAt": "2025-06-15 16:45:00",
-      "guestName": "Emma Johnson",
-      "listingName": "GuestReady London"
-    },
-    {
-      "id": 8004,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": 6,
-      "publicReview": "Decent service from GuestReady but felt overpriced for what we got. Clean property but quite small. Location is convenient for transport.",
-      "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 7 },
-        { "category": "value", "rating": 5 }
-      ],
-      "submittedAt": "2025-06-12 09:20:00",
-      "guestName": "David Rodriguez",
-      "listingName": "GuestReady London"
-    },
-    {
-      "id": 8005,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": 9,
-      "publicReview": "Excellent experience with GuestReady London! Clean, well-equipped apartment and smooth self-check-in process. Would definitely book again.",
-      "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 8 },
-        { "category": "value", "rating": 10 }
-      ],
-      "submittedAt": "2025-06-08 19:30:00",
-      "guestName": "Sarah Williams",
-      "listingName": "GuestReady London"
-    },
-    {
-      "id": 8006,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": 7,
-      "publicReview": "Good overall stay with GuestReady London. Property was clean and well-located. Check-in instructions could be clearer.",
-      "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 6 },
-        { "category": "value", "rating": 8 }
-      ],
-      "submittedAt": "2025-05-30 13:45:00",
-      "guestName": "James Taylor",
-      "listingName": "GuestReady London"
-    },
-    {
       "id": 9001,
       "type": "guest-to-host",
       "status": "published",
@@ -109,7 +49,70 @@
     {
       "id": 9002,
       "type": "guest-to-host",
-      "status": "published", 
+      "status": "published",
+      "rating": 6,
+      "publicReview": "I had some issues in checking-in, the key did not appear on time even if I had purchased the early check-in.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 2 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2025-05-28 16:20:00",
+      "guestName": "Olivia White",
+      "listingName": "The Shoreditch Loft"
+    },
+    {
+      "id": 9003,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 1,
+      "publicReview": "We arrived at a dirty property, the floors were sticky, and the bathroom had not been cleaned. The host was unresponsive to our messages.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 0 },
+        { "category": "communication", "rating": 3 },
+        { "category": "value", "rating": 1 }
+      ],
+      "submittedAt": "2025-04-28 18:00:00",
+      "guestName": "Sophia Martin",
+      "listingName": "The Shoreditch Loft"
+    },
+    {
+      "id": 9004,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Property is located in the center. We really enjoyed our stay, the host was very responsive and the apartment was clean and well-equipped.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-05-28 18:00:00",
+      "guestName": "Sonia Martin",
+      "listingName": "The Shoreditch Loft"
+    },
+
+    {
+      "id": 9005,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Mixed experience. The location is great but the apartment was not as clean as expected. Some areas were spotless, others not so much.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 3 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2025-06-28 18:00:00",
+      "guestName": "Max Martin",
+      "listingName": "The Shoreditch Loft"
+    },
+
+
+    {
+      "id": 10001,
+      "type": "guest-to-host",
+      "status": "published",
       "rating": 4,
       "publicReview": "Great location but the apartment was filthy. Found old food in the fridge and the bathroom was not cleaned properly. Not acceptable.",
       "reviewCategory": [
@@ -122,52 +125,7 @@
       "listingName": "Camden Market Flat"
     },
     {
-      "id": 9003,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": 8,
-      "publicReview": "You can't beat the price for this location. The apartment is basic and the host was a bit slow to reply, but it's a great value for a budget traveler.",
-      "reviewCategory": [
-        { "category": "cleanliness", "rating": 7 },
-        { "category": "communication", "rating": 6 },
-        { "category": "value", "rating": 10 }
-      ],
-      "submittedAt": "2025-06-12 11:00:00",
-      "guestName": "Emily Carter",
-      "listingName": "Kensington Studio"
-    },
-    {
-      "id": 9004,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": 5,
-      "publicReview": "The apartment was clean, but we couldn't reach the host for check-in instructions. Waited for an hour on the street. Very stressful start to our trip.",
-      "reviewCategory": [
-        { "category": "cleanliness", "rating": 9 },
-        { "category": "communication", "rating": 3 },
-        { "category": "value", "rating": 8 }
-      ],
-      "submittedAt": "2025-06-10 19:45:00",
-      "guestName": "David Rodriguez",
-      "listingName": "Soho Theatre Apartment"
-    },
-    {
-      "id": 9005,
-      "type": "guest-to-host",
-      "status": "published",
-      "rating": 9,
-      "publicReview": "Another great stay at the Shoreditch Loft. Consistently clean and professional. The best place for a work trip in London.",
-      "reviewCategory": [
-        { "category": "cleanliness", "rating": 10 },
-        { "category": "communication", "rating": 9 },
-        { "category": "value", "rating": 9 }
-      ],
-      "submittedAt": "2025-05-28 16:20:00",
-      "guestName": "Olivia White",
-      "listingName": "The Shoreditch Loft"
-    },
-    {
-      "id": 9006,
+      "id": 10002,
       "type": "guest-to-host",
       "status": "published",
       "rating": 3,
@@ -182,22 +140,82 @@
       "listingName": "Camden Market Flat"
     },
     {
-      "id": 9007,
+      "id": 10003,
       "type": "guest-to-host",
       "status": "published",
       "rating": 7,
-      "publicReview": "The host seemed overwhelmed. We had to ask multiple times for the WiFi password. The apartment itself was fine, just needs more attentive management.",
+      "publicReview": "Location is fantastic for Camden Market access. The flat itself needs some TLC but acceptable for the price. Host was responsive to our concerns.",
       "reviewCategory": [
-        { "category": "cleanliness", "rating": 8 },
-        { "category": "communication", "rating": 5 },
-        { "category": "value", "rating": 7 }
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
       ],
-      "submittedAt": "2025-05-20 12:15:00",
-      "guestName": "Chloe Taylor",
-      "listingName": "Soho Theatre Apartment"
+      "submittedAt": "2025-05-10 16:45:00",
+      "guestName": "Lisa Anderson",
+      "listingName": "Camden Market Flat"
     },
     {
-      "id": 9008,
+      "id": 10004,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Mixed experience. The location is unbeatable for Camden nightlife, but cleanliness standards are inconsistent. Some areas were spotless, others not so much.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 4 },
+        { "category": "communication", "rating": 7 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2025-04-22 12:30:00",
+      "guestName": "Tom Wilson",
+      "listingName": "Camden Market Flat"
+    },
+    {
+      "id": 10005,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Much better than expected! Recent improvements are noticeable. Clean, comfortable, and great value for Camden area. Would recommend for budget travelers.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-04-05 09:15:00",
+      "guestName": "Rachel Davis",
+      "listingName": "Camden Market Flat"
+    },
+    {
+      "id": 10006,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Decent stay overall. The flat has character and the Camden location is perfect for exploring. Some maintenance issues but nothing major.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-03-28 14:20:00",
+      "guestName": "Kevin Brown",
+      "listingName": "Camden Market Flat"
+    },
+    {
+      "id": 11001,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "You can't beat the price for this location. The apartment is basic and the host was a bit slow to reply, but it's a great value for a budget traveler.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 10 }
+      ],
+      "submittedAt": "2025-06-12 11:00:00",
+      "guestName": "Emily Carter",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11002,
       "type": "guest-to-host",
       "status": "published",
       "rating": 9,
@@ -212,19 +230,1235 @@
       "listingName": "Kensington Studio"
     },
     {
-      "id": 9009,
+      "id": 11003,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Perfect location for Hyde Park and museums. Studio is compact but well-designed. Host could be more responsive but overall good value.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-05-08 15:30:00",
+      "guestName": "Anna Martinez",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11004,
       "type": "guest-to-host",
       "status": "published",
       "rating": 6,
-      "publicReview": "Decent place, but the photos are a bit misleading. The apartment is much smaller than it looks. Communication was fine, but I feel it was overpriced.",
+      "publicReview": "Good location but the studio feels cramped for two people. Clean enough but could use some updates. Fair price for Kensington area.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 7 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2025-04-30 18:45:00",
+      "guestName": "Peter Johnson",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11005,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Excellent value for money in Kensington! Clean, comfortable, and the host provided great local recommendations. Would definitely stay again.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 10 }
+      ],
+      "submittedAt": "2025-04-18 10:15:00",
+      "guestName": "Sophie Turner",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11006,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great little studio in prime location. Everything worked well and check-in was smooth. Minor noise from street but expected in central London.",
       "reviewCategory": [
         { "category": "cleanliness", "rating": 8 },
         { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-04-12 13:20:00",
+      "guestName": "Daniel Lee",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11007,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Solid choice for Kensington. The studio has everything you need and the location is unbeatable. Host was helpful with local tips.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-04-05 16:30:00",
+      "guestName": "Maria Garcia",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11008,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Location is great but the studio needs maintenance. Shower pressure was poor and WiFi kept dropping. Host was slow to respond to issues.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 4 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2025-03-28 11:45:00",
+      "guestName": "Robert Kim",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11009,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Fantastic value in Kensington! Clean, well-equipped studio with great transport links. Perfect for solo travelers or couples.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 7 },
+        { "category": "value", "rating": 10 }
+      ],
+      "submittedAt": "2025-03-20 14:10:00",
+      "guestName": "Jennifer White",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11010,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Exceeded expectations! The studio is small but perfectly formed. Great location for museums and shopping. Host was very accommodating.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-03-15 09:30:00",
+      "guestName": "Michael Thompson",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11011,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Decent studio for the price. Location is the main selling point. Could be cleaner and the furniture is showing its age.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 7 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-03-08 17:20:00",
+      "guestName": "Laura Wilson",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11012,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good value for Kensington area. Studio is compact but functional. Host provided clear instructions and was available when needed.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-03-01 12:45:00",
+      "guestName": "Chris Davis",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11013,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great little place in prime Kensington location. Clean, comfortable, and excellent value. Perfect for exploring London's museums.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-02-22 15:15:00",
+      "guestName": "Emma Rodriguez",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11014,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Outstanding value! The studio is small but has everything you need. Perfect location for Hyde Park and South Kensington museums.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 10 }
+      ],
+      "submittedAt": "2025-02-18 10:30:00",
+      "guestName": "Alex Brown",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11015,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Solid choice for budget-conscious travelers. Location is excellent and the studio meets basic needs. Host was responsive and helpful.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-02-10 14:45:00",
+      "guestName": "Sarah Miller",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11016,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Location is the main advantage. Studio is basic but clean. Some wear and tear visible but acceptable for the price point.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2025-02-05 11:20:00",
+      "guestName": "David Taylor",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11017,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great value studio in fantastic location. Clean, well-equipped, and perfect for exploring Kensington. Host was very accommodating.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-01-28 16:10:00",
+      "guestName": "Lisa Johnson",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11018,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Excellent studio in prime location! Clean, comfortable, and great value for money. Perfect for couples or solo travelers.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 10 }
+      ],
+      "submittedAt": "2025-01-22 13:30:00",
+      "guestName": "Mark Anderson",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11019,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good location and fair price. Studio is compact but has everything needed. Host was helpful with local recommendations.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-01-15 09:45:00",
+      "guestName": "Rachel Green",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11020,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Fantastic value in Kensington! The studio is small but perfectly designed. Great location for museums and Hyde Park.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-01-08 15:20:00",
+      "guestName": "Tom Wilson",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11021,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Decent studio for the price. Location is excellent but the space could use some updates. Host was responsive to our needs.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 7 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2025-01-02 12:10:00",
+      "guestName": "Anna Clark",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11022,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Outstanding studio in prime Kensington! Clean, well-equipped, and excellent value. Perfect location for exploring London.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 10 }
+      ],
+      "submittedAt": "2024-12-28 14:30:00",
+      "guestName": "Kevin Martinez",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11023,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good value studio in great location. Clean and functional, though compact. Host provided helpful local information.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2024-12-20 10:45:00",
+      "guestName": "Sophie Davis",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11024,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great little studio in fantastic location! Clean, comfortable, and excellent value for Kensington area. Would recommend.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2024-12-15 16:15:00",
+      "guestName": "Daniel Kim",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11025,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Location is great but studio needs maintenance. Several minor issues that affected our stay. Host was apologetic but slow to resolve problems.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 5 },
+        { "category": "communication", "rating": 4 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2024-12-08 13:25:00",
+      "guestName": "Maria Rodriguez",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11026,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Excellent value studio in prime location. Clean, well-equipped, and perfect for exploring Kensington museums and Hyde Park.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2024-12-01 11:40:00",
+      "guestName": "Robert Lee",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11027,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Fantastic studio in unbeatable location! Clean, comfortable, and great value. Host was very helpful with local recommendations.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 10 }
+      ],
+      "submittedAt": "2024-11-25 15:50:00",
+      "guestName": "Jennifer Brown",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11028,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good studio for the price. Location is excellent and the space meets basic needs. Host was responsive and provided useful local tips.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2024-11-18 09:20:00",
+      "guestName": "Michael Garcia",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11029,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great value in Kensington! Studio is compact but well-designed. Perfect location for museums and shopping. Would stay again.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2024-11-10 14:35:00",
+      "guestName": "Laura Thompson",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11030,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Decent studio in good location. Could be cleaner and some amenities need updating. Fair price for Kensington area.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 7 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-11-05 12:15:00",
+      "guestName": "Chris Wilson",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11031,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Outstanding studio in prime location! Exceeded expectations with cleanliness and amenities. Perfect for exploring London.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 10 }
+      ],
+      "submittedAt": "2024-10-28 16:45:00",
+      "guestName": "Emma Davis",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 11032,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good studio for budget travelers. Location is the main selling point. Clean and functional, though compact. Host was helpful.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2024-10-22 10:30:00",
+      "guestName": "Alex Johnson",
+      "listingName": "Kensington Studio"
+    },
+    {
+      "id": 12001,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "The apartment was clean, but we couldn't reach the host for check-in instructions. Waited for an hour on the street. Very stressful start to our trip.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 3 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-06-10 19:45:00",
+      "guestName": "David Rodriguez",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12002,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "The host seemed overwhelmed. We had to ask multiple times for the WiFi password. The apartment itself was fine, just needs more attentive management.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 5 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2025-05-20 12:15:00",
+      "guestName": "Chloe Taylor",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12003,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great location right in the heart of Soho! The apartment is well-equipped and clean. Host was responsive once we made contact.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 7 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-05-15 14:30:00",
+      "guestName": "Amanda Wilson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12004,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Perfect location for theatre lovers! The apartment is decent but could use some updates. Communication was slow but eventually resolved.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 5 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2025-05-08 10:20:00",
+      "guestName": "Richard Brown",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12005,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Fantastic location in Soho! Clean, comfortable apartment with everything we needed. Host was very helpful with restaurant recommendations.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-05-01 16:45:00",
+      "guestName": "Jessica Martinez",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12006,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 4,
+      "publicReview": "Location is great but apartment needs maintenance. Several issues during our stay and host was difficult to reach. Not worth the price.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 3 },
         { "category": "value", "rating": 4 }
       ],
-      "submittedAt": "2025-04-28 18:00:00",
-      "guestName": "Sophia Martin",
-      "listingName": "The Shoreditch Loft"
+      "submittedAt": "2025-04-25 11:30:00",
+      "guestName": "Steven Davis",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12007,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Excellent location for exploring Soho and West End! Apartment is clean and well-equipped. Host provided great local tips.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-04-18 13:15:00",
+      "guestName": "Caroline Lee",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12008,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good apartment in prime Soho location. Clean and comfortable, though communication could be better. Great for theatre visits.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2025-04-10 15:40:00",
+      "guestName": "Paul Johnson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12009,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Location is unbeatable for Soho nightlife. Apartment is adequate but showing its age. Host was eventually responsive.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 5 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2025-04-03 09:25:00",
+      "guestName": "Helen Garcia",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12010,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Perfect Soho location! Clean, comfortable apartment with great amenities. Host was very helpful and responsive. Highly recommend!",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-03-28 17:10:00",
+      "guestName": "Matthew Kim",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12011,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Great location but apartment needs attention. Several maintenance issues and host was slow to respond. Could be much better.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 4 },
+        { "category": "value", "rating": 5 }
+      ],
+      "submittedAt": "2025-03-20 12:50:00",
+      "guestName": "Nicole Rodriguez",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12012,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Excellent Soho location! Apartment is clean and well-maintained. Perfect for theatre lovers. Host provided helpful recommendations.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-03-15 14:20:00",
+      "guestName": "Andrew Thompson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12013,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good apartment in fantastic location. Clean and comfortable, though communication could be improved. Great for exploring Soho.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2025-03-08 10:35:00",
+      "guestName": "Samantha White",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12014,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Prime Soho location but apartment needs updates. Decent stay overall but communication issues affected the experience.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 5 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2025-03-01 16:15:00",
+      "guestName": "Brian Anderson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12015,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Outstanding location in heart of Soho! Clean, comfortable apartment with excellent amenities. Host was very responsive and helpful.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-02-22 11:45:00",
+      "guestName": "Diana Martinez",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12016,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Great location for theatre and dining! Apartment is decent and clean. Host could be more responsive but overall good experience.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2025-02-15 13:30:00",
+      "guestName": "Gregory Davis",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12017,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Excellent Soho location! Clean, well-equipped apartment perfect for exploring West End. Host provided great local recommendations.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-02-08 15:20:00",
+      "guestName": "Victoria Wilson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12018,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Location is fantastic but apartment has several issues. Host was difficult to reach when problems arose. Needs better management.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 3 },
+        { "category": "value", "rating": 5 }
+      ],
+      "submittedAt": "2025-02-01 09:40:00",
+      "guestName": "Jonathan Lee",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12019,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Perfect location in Soho! Clean, comfortable apartment with everything needed. Host was helpful with theatre recommendations.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2025-01-25 14:50:00",
+      "guestName": "Rebecca Brown",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12020,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good apartment in prime location. Clean and functional, though communication could be better. Great for Soho exploration.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2025-01-18 12:25:00",
+      "guestName": "Timothy Garcia",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12021,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Excellent location but apartment needs maintenance. Several minor issues during stay. Host was eventually responsive.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 5 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2025-01-10 16:35:00",
+      "guestName": "Michelle Rodriguez",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12022,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Outstanding Soho location! Clean, well-equipped apartment with excellent amenities. Host was very responsive and helpful throughout.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2025-01-05 10:15:00",
+      "guestName": "Christopher Kim",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12023,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Great location for theatre lovers! Apartment is clean and comfortable. Host could be more responsive but overall good experience.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-12-28 13:45:00",
+      "guestName": "Amanda Thompson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12024,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Excellent Soho apartment! Clean, well-maintained, and perfect location for exploring West End. Host provided helpful local tips.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2024-12-20 15:10:00",
+      "guestName": "Kenneth White",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12025,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Prime location but apartment has maintenance issues. Host was slow to respond to our concerns. Could be much better managed.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 4 },
+        { "category": "value", "rating": 5 }
+      ],
+      "submittedAt": "2024-12-15 11:30:00",
+      "guestName": "Patricia Anderson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12026,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Fantastic location in heart of Soho! Clean, comfortable apartment with great amenities. Host was helpful with restaurant recommendations.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2024-12-08 14:20:00",
+      "guestName": "William Davis",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12027,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good apartment in excellent location. Clean and functional, though communication could be improved. Great for theatre visits.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-12-01 09:55:00",
+      "guestName": "Elizabeth Martinez",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12028,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Great location but apartment needs updates. Decent stay overall but several minor issues. Host was eventually helpful.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 5 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2024-11-25 16:40:00",
+      "guestName": "Charles Wilson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12029,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Perfect Soho location! Clean, well-equipped apartment with excellent amenities. Host was very responsive and provided great local advice.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2024-11-18 12:15:00",
+      "guestName": "Jennifer Garcia",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12030,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Excellent location for Soho exploration! Apartment is clean and comfortable. Host could be more responsive but overall good experience.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-11-10 14:30:00",
+      "guestName": "Thomas Rodriguez",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12031,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great Soho apartment! Clean, well-maintained, and perfect location for theatre and dining. Host provided helpful recommendations.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2024-11-05 10:45:00",
+      "guestName": "Mary Kim",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12032,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Location is unbeatable but apartment has several maintenance issues. Host was difficult to reach when problems occurred. Needs attention.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 3 },
+        { "category": "value", "rating": 5 }
+      ],
+      "submittedAt": "2024-10-28 15:20:00",
+      "guestName": "Joseph Thompson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12033,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Excellent Soho location! Clean, comfortable apartment with great amenities. Perfect for exploring West End theatres and restaurants.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2024-10-20 11:35:00",
+      "guestName": "Linda White",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12034,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good apartment in prime Soho location. Clean and functional, though communication could be better. Great for theatre lovers.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-10-15 13:50:00",
+      "guestName": "Robert Anderson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12035,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Fantastic location but apartment needs updates. Decent stay overall but several minor issues affected the experience.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 5 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2024-10-08 09:25:00",
+      "guestName": "Barbara Davis",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12036,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Outstanding Soho apartment! Clean, well-equipped, and perfect location for everything. Host was very helpful and responsive throughout our stay.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2024-10-01 16:10:00",
+      "guestName": "Richard Martinez",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12037,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Great location for Soho exploration! Apartment is clean and comfortable. Host could be more responsive but overall good experience.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-09-25 12:40:00",
+      "guestName": "Susan Wilson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12038,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Excellent apartment in heart of Soho! Clean, well-maintained, and perfect for theatre visits. Host provided great local recommendations.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2024-09-18 14:55:00",
+      "guestName": "David Garcia",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12039,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Prime location but apartment has maintenance problems. Host was slow to respond to our concerns. Could be much better managed.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 4 },
+        { "category": "value", "rating": 5 }
+      ],
+      "submittedAt": "2024-09-10 10:20:00",
+      "guestName": "Karen Rodriguez",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12040,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Fantastic Soho location! Clean, comfortable apartment with excellent amenities. Perfect for exploring West End and great restaurants.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2024-09-05 15:35:00",
+      "guestName": "Nancy Kim",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12041,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good apartment in excellent location. Clean and functional, though communication could be improved. Great for Soho nightlife.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-08-28 11:15:00",
+      "guestName": "Paul Thompson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12042,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Excellent location but apartment needs attention. Several minor issues during stay. Host was eventually helpful but slow to respond.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 5 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2024-08-20 13:45:00",
+      "guestName": "Lisa White",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12043,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Perfect Soho apartment! Clean, well-equipped, and outstanding location for everything. Host was very responsive and provided excellent local advice.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2024-08-15 17:25:00",
+      "guestName": "Margaret Johnson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12044,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good apartment in prime location. Clean and functional, though communication could be improved. Great for exploring Soho.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-08-10 13:40:00",
+      "guestName": "Steven Clark",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12045,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Excellent location but apartment needs maintenance. Several minor issues during stay. Host was eventually responsive.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 5 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2024-08-05 11:15:00",
+      "guestName": "Carol Rodriguez",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12046,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Fantastic location in heart of Soho! Clean, comfortable apartment with great amenities. Perfect for theatre visits.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2024-07-28 14:50:00",
+      "guestName": "Frank Martinez",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12047,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 5,
+      "publicReview": "Prime location but apartment has issues. Host was slow to respond to problems. Could be much better managed.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 6 },
+        { "category": "communication", "rating": 4 },
+        { "category": "value", "rating": 5 }
+      ],
+      "submittedAt": "2024-07-20 09:30:00",
+      "guestName": "Dorothy Kim",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12048,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Great Soho apartment! Clean, well-equipped, and excellent location for exploring West End. Host provided helpful tips.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2024-07-15 16:20:00",
+      "guestName": "George Thompson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12049,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 7,
+      "publicReview": "Good apartment in fantastic location. Clean and comfortable, though communication could be better. Great for theatre lovers.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 6 },
+        { "category": "value", "rating": 7 }
+      ],
+      "submittedAt": "2024-07-08 12:45:00",
+      "guestName": "Helen White",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12050,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9,
+      "publicReview": "Outstanding Soho location! Clean, well-maintained apartment with excellent amenities. Host was very helpful throughout our stay.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 9 },
+        { "category": "value", "rating": 9 }
+      ],
+      "submittedAt": "2024-07-01 10:35:00",
+      "guestName": "Edward Anderson",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12051,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 6,
+      "publicReview": "Great location but apartment needs updates. Decent stay overall but several maintenance issues. Host was eventually helpful.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 7 },
+        { "category": "communication", "rating": 5 },
+        { "category": "value", "rating": 6 }
+      ],
+      "submittedAt": "2024-06-25 15:10:00",
+      "guestName": "Betty Davis",
+      "listingName": "Soho Theatre Apartment"
+    },
+    {
+      "id": 12052,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 8,
+      "publicReview": "Excellent Soho apartment! Clean, comfortable, and perfect location for everything. Host provided great local recommendations.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 8 },
+        { "category": "communication", "rating": 8 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2024-06-18 11:25:00",
+      "guestName": "Ronald Martinez",
+      "listingName": "Soho Theatre Apartment"
     }
   ]
 }
+

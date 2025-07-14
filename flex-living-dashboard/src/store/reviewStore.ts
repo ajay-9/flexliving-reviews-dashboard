@@ -2,19 +2,27 @@ import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { PropertyStats, FilterState } from "@/types/dashboard";
 import { NormalizedReview } from "@/types/api";
+import { PropertyAnalysis } from "@/types/analysis";
 import {
   groupReviewsByProperty,
   addChannelToReview,
 } from "@/utils/reviewHelpers";
 
+// Import new modular components
+import { AnalysisSlice } from "./modules/analysisStore";
+import { analysisActions } from "./actions/analysisActions";
+import { analysisSelectors } from "./selectors/analysisSelectors";
+
+// KEEP YOUR EXISTING INTERFACE EXACTLY THE SAME
 interface ReviewState {
   properties: PropertyStats[];
   filteredProperties: PropertyStats[];
   loading: boolean;
   error: string | null;
   filters: FilterState;
-  // Store approval decisions separately
-  approvalDecisions: Record<number, 'approved' | 'rejected'>;
+  approvalDecisions: Record<number, "approved" | "rejected">;
+  
+  // Your existing methods - UNCHANGED
   fetchReviews: () => Promise<void>;
   updateFilters: (newFilters: Partial<FilterState>) => void;
   moderateReview: (
@@ -24,10 +32,35 @@ interface ReviewState {
   ) => void;
 }
 
-// Apply stored approval decisions to reviews
+// NEW: Extended interface that includes analysis features
+interface ExtendedReviewState extends ReviewState {
+  // Analysis state (new)
+  analyses: Record<string, PropertyAnalysis>;
+  analysisLoading: Record<string, boolean>;
+  analysisErrors: Record<string, string>;
+  
+  // Analysis actions (new)
+  analyzeProperty: (propertyName: string, forceRefresh?: boolean) => Promise<void>;
+  analyzeBatch: (propertyNames?: string[]) => Promise<void>;
+  clearAnalysisCache: () => void;
+  
+  // Analysis selectors (new)
+  getAnalysisStatus: (propertyName: string) => {
+    analysis: PropertyAnalysis | null;
+    isLoading: boolean;
+    error: string | null;
+  };
+  getAnalysisStats: () => ReturnType<typeof analysisSelectors.getAnalysisStats>;
+  getCriticalProperties: () => ReturnType<typeof analysisSelectors.getCriticalProperties>;
+  getEmergingConcerns: () => ReturnType<typeof analysisSelectors.getEmergingConcerns>;
+  getImprovementOpportunities: () => ReturnType<typeof analysisSelectors.getImprovementOpportunities>;
+  getPropertiesNeedingAttention: () => ReturnType<typeof analysisSelectors.getPropertiesNeedingAttention>;
+}
+
+// KEEP ALL YOUR EXISTING HELPER FUNCTIONS EXACTLY THE SAME
 const applyApprovalDecisions = (
   reviews: NormalizedReview[],
-  approvalDecisions: Record<number, 'approved' | 'rejected'>
+  approvalDecisions: Record<number, "approved" | "rejected">
 ): NormalizedReview[] => {
   return reviews.map(review => {
     const decision = approvalDecisions[review.id];
@@ -36,12 +69,12 @@ const applyApprovalDecisions = (
     } else if (decision === 'rejected') {
       return { ...review, approved: false, rejected: true };
     }
-    return review; // Keep original state if no decision
+    return review;
   });
 };
 
-// Recalculate function
 const recalculatePropertyStats = (property: PropertyStats): PropertyStats => {
+  // KEEP YOUR EXISTING IMPLEMENTATION EXACTLY THE SAME
   const approvedReviews = property.reviews.filter(r => r.approved === true);
   const pendingReviews = property.reviews.filter(r => !r.approved && !r.rejected);
 
@@ -102,8 +135,8 @@ const filterProperties = (
   properties: PropertyStats[],
   filters: FilterState
 ): PropertyStats[] => {
+  // KEEP YOUR EXISTING IMPLEMENTATION EXACTLY THE SAME
   const now = new Date();
-  
   let filteredProperties = properties
     .map((property) => {
       const reviews = property.reviews.filter((review, index) => {
@@ -114,11 +147,9 @@ const filterProperties = (
           reviewWithChannel = { ...review, channel: 'Direct Booking' };
         }
 
-        // Apply channel filter
         if (filters.channel && reviewWithChannel.channel !== filters.channel)
           return false;
 
-        // Apply time filter
         if (filters.time) {
           const reviewDate =
             review.date instanceof Date ? review.date : new Date(review.date);
@@ -136,7 +167,6 @@ const filterProperties = (
       return { ...property, reviews };
     })
     .filter((property) => {
-      // Search filter
       if (
         filters.search &&
         !property.name.toLowerCase().includes(filters.search.toLowerCase())
@@ -144,7 +174,6 @@ const filterProperties = (
         return false;
       }
 
-      // Rating filter
       if (
         filters.rating &&
         Math.floor(property.averageRating) !== parseInt(filters.rating)
@@ -155,132 +184,190 @@ const filterProperties = (
       return property.reviews.length > 0;
     });
 
-  // NEW CATEGORY FILTER LOGIC - Sort by category performance
   if (filters.category && filters.category !== 'all') {
-    // Filter out properties that don't have the selected category data
     filteredProperties = filteredProperties.filter(property => {
-      return property.categoryAverages && 
-             property.categoryAverages[filters.category] !== undefined;
+      return property.categoryAverages &&
+        property.categoryAverages[filters.category] !== undefined;
     });
 
-    // Sort properties by selected category performance (ascending order - worst first)
     filteredProperties.sort((a, b) => {
       const categoryA = a.categoryAverages[filters.category] || 0;
       const categoryB = b.categoryAverages[filters.category] || 0;
-      
-      return categoryB - categoryA; // Descending order (lowest ratings first)
+      return categoryB - categoryA;
     });
   }
 
   return filteredProperties;
 };
 
-
-// Proper Zustand store with persistence
-export const useReviewStore = create<ReviewState>()(
+// ENHANCED STORE WITH MODULAR ANALYSIS FEATURES
+export const useReviewStore = create<ExtendedReviewState>()(
   persist(
-    (set, get) => ({
-      properties: [],
-      filteredProperties: [],
-      loading: true,
-      error: null,
-      filters: { search: "", channel: "", rating: "", category: "", time: "" },
-      approvalDecisions: {},
+    (set, get) => {
+      // Create analysis actions with access to store state
+      const analyzePropertyAction = analysisActions.createAnalyzePropertyAction(
+        () => get().properties,
+        set
+      );
+      
+      const analyzeBatchAction = analysisActions.createAnalyzeBatchAction(
+        () => get().properties,
+        set
+      );
 
-      fetchReviews: async () => {
-        set({ loading: true, error: null });
-        try {
-          const response = await fetch("/api/reviews/hostaway");
-          if (!response.ok) throw new Error("Failed to fetch reviews");
-          
-          const json = await response.json();
-          const reviews = json.data.reviews as NormalizedReview[];
-          
-          const reviewsWithDates = reviews.map((review) => ({
-            ...review,
-            date: new Date(review.date),
-          }));
+      return {
+        // KEEP ALL YOUR EXISTING STATE EXACTLY THE SAME
+        properties: [],
+        filteredProperties: [],
+        loading: true,
+        error: null,
+        filters: { search: "", channel: "", rating: "", category: "", time: "" },
+        approvalDecisions: {},
+        
+        // NEW: Analysis state
+        analyses: {},
+        analysisLoading: {},
+        analysisErrors: {},
 
-          // Apply stored approval decisions
-          const { approvalDecisions } = get();
-          const reviewsWithApprovals = applyApprovalDecisions(reviewsWithDates, approvalDecisions);
-          
-          const properties = groupReviewsByProperty(reviewsWithApprovals);
+        // KEEP ALL YOUR EXISTING METHODS EXACTLY THE SAME
+        fetchReviews: async () => {
+          set({ loading: true, error: null });
+          try {
+            const response = await fetch("/api/reviews/hostaway");
+            if (!response.ok) throw new Error("Failed to fetch reviews");
 
-          set({
-            properties,
-            filteredProperties: properties,
-            loading: false,
+            const json = await response.json();
+            const reviews = json.data.reviews as NormalizedReview[];
+            const reviewsWithDates = reviews.map((review) => ({
+              ...review,
+              date: new Date(review.date),
+            }));
+
+            const { approvalDecisions } = get();
+            const reviewsWithApprovals = applyApprovalDecisions(reviewsWithDates, approvalDecisions);
+            const properties = groupReviewsByProperty(reviewsWithApprovals);
+
+            set({
+              properties,
+              filteredProperties: properties,
+              loading: false,
+            });
+          } catch (error: any) {
+            set({ error: error.message, loading: false });
+          }
+        },
+
+        updateFilters: (newFilters) => {
+          set((state) => {
+            const updatedFilters = { ...state.filters, ...newFilters };
+            const filteredProperties = filterProperties(
+              state.properties,
+              updatedFilters
+            );
+            return {
+              ...state,
+              filters: updatedFilters,
+              filteredProperties
+            };
           });
-        } catch (error: any) {
-          set({ error: error.message, loading: false });
-        }
-      },
+        },
 
-      updateFilters: (newFilters) => {
-        set((state) => {
-          const updatedFilters = { ...state.filters, ...newFilters };
-          const filteredProperties = filterProperties(
-            state.properties,
-            updatedFilters
-          );
-          return { 
-            ...state, // ✅ SPREAD ALL EXISTING STATE
-            filters: updatedFilters, 
-            filteredProperties 
-          };
-        });
-      },
+        moderateReview: (propertyName, reviewId, status) => {
+          set((state) => {
+            const newApprovalDecisions = {
+              ...state.approvalDecisions,
+              [reviewId]: status === "approve" ? "approved" as const : "rejected" as const
+            };
 
-   
-      moderateReview: (propertyName, reviewId, status) => {
-        set((state) => {
-          // Store approval decision persistently
-          const newApprovalDecisions = {
-            ...state.approvalDecisions,
-            [reviewId]: status === "approve" ? "approved" as const : "rejected" as const
-          };
-
-          const newProperties = state.properties.map((property) => {
-            if (property.name === propertyName) {
-              const updatedReviews = property.reviews.map((review) => {
-                if (review.id === reviewId) {
-                  if (status === "approve") {
-                    return { ...review, approved: true, rejected: false };
-                  } else {
-                    return { ...review, approved: false, rejected: true };
+            const newProperties = state.properties.map((property) => {
+              if (property.name === propertyName) {
+                const updatedReviews = property.reviews.map((review) => {
+                  if (review.id === reviewId) {
+                    if (status === "approve") {
+                      return { ...review, approved: true, rejected: false };
+                    } else {
+                      return { ...review, approved: false, rejected: true };
+                    }
                   }
-                }
-                return review;
-              });
+                  return review;
+                });
 
-              const updatedProperty = recalculatePropertyStats({
-                ...property,
-                reviews: updatedReviews
-              });
+                const updatedProperty = recalculatePropertyStats({
+                  ...property,
+                  reviews: updatedReviews
+                });
 
-              return updatedProperty;
-            }
-            return property;
+                return updatedProperty;
+              }
+              return property;
+            });
+
+            const filteredProperties = filterProperties(newProperties, state.filters);
+
+            return {
+              ...state,
+              properties: newProperties,
+              filteredProperties,
+              approvalDecisions: newApprovalDecisions
+            };
           });
+        },
 
-          const filteredProperties = filterProperties(newProperties, state.filters);
-          
-          
+        // NEW: Analysis methods using modular actions
+        analyzeProperty: analyzePropertyAction,
+        analyzeBatch: analyzeBatchAction,
+        
+        clearAnalysisCache: () => {
+          set(state => ({
+            ...state,
+            analyses: {},
+            analysisLoading: {},
+            analysisErrors: {}
+          }));
+        },
+
+        // NEW: Analysis selectors
+        getAnalysisStatus: (propertyName: string) => {
+          const state = get();
           return {
-            ...state, // Preserve all existing state
-            properties: newProperties,
-            filteredProperties,
-            approvalDecisions: newApprovalDecisions
+            analysis: analysisSelectors.getPropertyAnalysis(state.analyses, propertyName),
+            isLoading: state.analysisLoading[propertyName] || false,
+            error: state.analysisErrors[propertyName] || null
           };
-        });
-      },
-    }),
+        },
+
+        getAnalysisStats: () => {
+          const state = get();
+          return analysisSelectors.getAnalysisStats(state.analyses, state.properties.length);
+        },
+
+        getCriticalProperties: () => {
+          const state = get();
+          return analysisSelectors.getCriticalProperties(state.analyses);
+        },
+
+        getEmergingConcerns: () => {
+          const state = get();
+          return analysisSelectors.getEmergingConcerns(state.analyses);
+        },
+
+        getImprovementOpportunities: () => {
+          const state = get();
+          return analysisSelectors.getImprovementOpportunities(state.analyses);
+        },
+
+        getPropertiesNeedingAttention: () => {
+          const state = get();
+          return analysisSelectors.getPropertiesNeedingAttention(state.analyses);
+        }
+      };
+    },
     {
       name: 'review-store',
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
-        approvalDecisions: state.approvalDecisions
+        approvalDecisions: state.approvalDecisions,
+        analyses: state.analyses // NEW: Persist analyses too
       }),
     }
   )
