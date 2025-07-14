@@ -68,7 +68,7 @@ function normalizeHostawayReview(review: HostawayReview): NormalizedReview | nul
  */
 async function fetchHostawayReviews(): Promise<HostawayApiResponse | null> {
   try {
-    // ✅ ENFORCE RATE LIMITING
+    // ENFORCE RATE LIMITING
     await enforceRateLimit();
     
     const response = await fetch('https://api.hostfully.com/v1/reviews', {
@@ -100,7 +100,7 @@ export async function GET() {
   try {
     const now = Date.now();
     
-    // ✅ CHECK 5-MINUTE CACHE FIRST
+    // CHECK 5-MINUTE CACHE FIRST
     if (cachedHostawayData && 
         (now - lastHostawayFetch) < CACHE_DURATION) {
       
@@ -114,14 +114,14 @@ export async function GET() {
       });
     }
 
-    // ✅ ATTEMPT REAL HOSTAWAY API WITH RATE LIMITING
+    // ATTEMPT REAL HOSTAWAY API WITH RATE LIMITING
     console.log('Attempting Hostaway API call...');
     const realApiResponse = await fetchHostawayReviews();
     
     let apiResponse: HostawayApiResponse;
     let dataSource = 'mock'; // Default assumption
     
-    // ✅ USE REAL DATA IF AVAILABLE AND VALID
+    // USE REAL DATA IF AVAILABLE AND VALID
     if (realApiResponse && 
         realApiResponse.status === 'success' && 
         realApiResponse.result && 
@@ -132,22 +132,22 @@ export async function GET() {
       console.log(`Using live Hostaway data: ${realApiResponse.result.length} reviews`);
       
     } else {
-      // ✅ FALLBACK TO MOCK DATA
+      // FALLBACK TO MOCK DATA
       apiResponse = mockData as HostawayApiResponse;
       console.log('Using mock data fallback');
     }
 
-    // ✅ VALIDATE API RESPONSE STRUCTURE
+    // VALIDATE API RESPONSE STRUCTURE
     if (apiResponse.status !== 'success') {
       throw new Error('API response unsuccessful');
     }
 
-    // ✅ NORMALIZE ALL DATA CONSISTENTLY
+    // NORMALIZE ALL DATA CONSISTENTLY
     const normalizedReviews = apiResponse.result
       .map(normalizeHostawayReview)
       .filter(Boolean) as NormalizedReview[];
 
-    // ✅ PREPARE CACHED RESPONSE DATA
+    // PREPARE CACHED RESPONSE DATA
     const responseData = {
       reviews: normalizedReviews,
       total: normalizedReviews.length,
@@ -158,7 +158,7 @@ export async function GET() {
       }
     };
 
-    // ✅ CACHE THE RESPONSE
+    // CACHE THE RESPONSE
     cachedHostawayData = {
       data: responseData
     };
@@ -166,7 +166,7 @@ export async function GET() {
 
     console.log(`Hostaway data cached for 5 minutes: ${normalizedReviews.length} reviews`);
 
-    // ✅ RETURN STRUCTURED RESPONSE
+    // RETURN STRUCTURED RESPONSE
     return NextResponse.json({
       status: 'success',
       dataSource, // Helps with debugging
@@ -176,7 +176,7 @@ export async function GET() {
   } catch (error) {
     console.error('API Route Error:', error);
     
-    // ✅ RETURN CACHED DATA IF AVAILABLE ON ERROR
+    // RETURN CACHED DATA IF AVAILABLE ON ERROR
     if (cachedHostawayData) {
       console.log('API error - serving cached Hostaway data');
       return NextResponse.json({
@@ -187,7 +187,7 @@ export async function GET() {
       });
     }
     
-    // ✅ FINAL FALLBACK WITH MOCK DATA
+    // FINAL FALLBACK WITH MOCK DATA
     try {
       const fallbackResponse = mockData as HostawayApiResponse;
       const normalizedReviews = fallbackResponse.result

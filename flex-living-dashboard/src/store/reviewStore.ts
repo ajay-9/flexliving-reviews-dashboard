@@ -40,7 +40,7 @@ const applyApprovalDecisions = (
   });
 };
 
-// ✅ Recalculate function
+// Recalculate function
 const recalculatePropertyStats = (property: PropertyStats): PropertyStats => {
   const approvedReviews = property.reviews.filter(r => r.approved === true);
   const pendingReviews = property.reviews.filter(r => !r.approved && !r.rejected);
@@ -155,7 +155,7 @@ const filterProperties = (
       return property.reviews.length > 0;
     });
 
-  // ✅ NEW CATEGORY FILTER LOGIC - Sort by category performance
+  // NEW CATEGORY FILTER LOGIC - Sort by category performance
   if (filters.category && filters.category !== 'all') {
     // Filter out properties that don't have the selected category data
     filteredProperties = filteredProperties.filter(property => {

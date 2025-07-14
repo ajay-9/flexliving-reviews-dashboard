@@ -43,7 +43,7 @@ import { FILTER_OPTIONS } from '@/config/constants';
  *   { id: 2, listingName: "Shoreditch Loft", rating: 6, approved: false }
  * ];
  * const stats = groupReviewsByProperty(reviews);
- * // Result: Shoreditch Loft shows 1 approved review, 4.0/5 rating
+ * 
  */
 export function groupReviewsByProperty(reviews: NormalizedReview[]): PropertyStats[] {
   // Step 1: Group reviews by property listing name
